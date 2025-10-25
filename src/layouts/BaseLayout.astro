@@ -1,0 +1,26 @@
+---
+const { title = "РС+ — Техническое сопровождение фанерных производств" } = Astro.props;
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<!doctype html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="РС+ — техническое сопровождение фанерных производств в России и СНГ." />
+    <link rel="stylesheet" href="/src/styles/main.css">
+  </head>
+
+  <body class="page">
+	
+    <Header />
+    <main class="page__content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+
+</html>

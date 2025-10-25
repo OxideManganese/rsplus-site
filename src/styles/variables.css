@@ -1,0 +1,26 @@
+:root {
+  /* Основные цвета */
+  --color-dark: #17406D;
+  --color-light-gray: rgb(238, 238, 238);
+  --color-light: #DBEFF9;
+
+  /* Акцентные и дополнительные */
+  --color-accent: #0F6FC6;
+  --color-accent-alt1: #009DD9;
+  --color-accent-alt2: #0BD0D9;
+  --color-accent-alt3: #10CF9B;
+  --color-accent-alt4: #7CCA62;
+  --color-accent-alt5: #A5C249;
+  --color-accent-alt6: #F49100;
+  --color-accent-alt7: #85DFD0;
+
+  /* Цвета текста и фона */
+  --color-text: #222;
+  --color-text-negative: #fff;
+  --color-border: #e5e5e577;
+  --color-bg: #fff;
+
+  /* Контейнер и размеры */
+  --container-width: 1200px;
+  --container-padding: 24px;
+}

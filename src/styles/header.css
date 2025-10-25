@@ -1,0 +1,218 @@
+/* === Header Styles === */
+
+.header {
+    width: 100%;
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    transition: height .5s ease;
+}
+
+/* Верхняя полоса */
+.header__top {
+    background-color: var(--color-dark);
+    color: #fff;
+    font-size: var(--font-size-sm);
+    transform-origin: top;
+}
+
+body.is-scrolled .header__top {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    /* предотвращает взаимодействие со скрытым элементом */
+}
+
+.header__top .header__container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 6px var(--container-padding);
+}
+
+.header__contacts {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.header__contacts span {
+    opacity: 0.9;
+}
+
+.header__contacts-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header__contacts-link:hover {
+    color: var(--color-text-negative);
+}
+
+/* Нижняя (основная) часть */
+.header__bottom {
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-light-gray);
+    top: 0;
+    z-index: 1000;
+    left: 0;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    transition: height .5s ease;
+}
+
+.header__bottom .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 12px var(--container-padding);
+}
+
+.header__nav {
+    display: flex;
+    gap: 32px;
+}
+
+.header__link {
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.header__link:hover {
+    color: var(--color-accent);
+}
+
+.header__link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width 0.25s ease;
+}
+
+.header__link:hover::after {
+    width: 100%;
+}
+
+/* Состояния прокрутки */
+body.is-scrolled .header__bottom {
+    position: fixed;
+    width: 100%;
+    transform: translateY(0);
+}
+
+body.is-scrolled .header__top {
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+/* Бургер-кнопка */
+.header__burger {
+    display: none;
+    /* по умолчанию скрыта — видна будет только на мобильных */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+    /* выше навигации */
+}
+
+.header__burger-line {
+    width: 26px;
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.header__burger--active .header__burger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.header__burger--active .header__burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.header__burger--active .header__burger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header__top .header__container {
+        justify-content: center;
+        background: var(--color-accent);
+    }
+
+    .header__contacts {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .header__bottom .header__container {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(2, min-content);
+        grid-template-rows: min-content 1fr;
+    }
+
+    .header__burger {
+        display: flex;
+    }
+
+    .header__nav {
+        display: flex;
+        flex-direction: column;
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        gap: 0;
+        background: var(--color-accent);
+        padding: 0 var(--container-padding);
+        overflow: hidden;
+        margin: 12px -24px -12px;
+
+        /* Анимация раскрытия */
+        max-height: 0;
+        opacity: 0;
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            transform 0.4s ease;
+    }
+
+    .header__nav--open {
+        max-height: 400px;
+        opacity: 1;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header__link {
+        color: var(--color-text-negative);
+        border-bottom: 1px solid var(--color-border);
+        padding: 20px 0;
+    }
+
+    .header__link:last-child {
+        border-bottom: none;
+    }
+
+    .header__link:hover {
+        color: var(--color-light);
+    }
+}
