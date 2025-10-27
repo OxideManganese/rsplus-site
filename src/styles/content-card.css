@@ -94,7 +94,7 @@
 }
 
 .content-card__radius {
-  border-color: var(--card-color);
+  border-color: var(--card-color) !important;
   --radius: 130px;
   transition: all .5s ease;
 }
