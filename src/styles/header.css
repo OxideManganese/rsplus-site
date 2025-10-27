@@ -62,6 +62,7 @@ body.is-scrolled .header__top {
 }
 
 .header__bottom .header__container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -95,10 +96,16 @@ body.is-scrolled .header__top {
     width: 0%;
     height: 2px;
     background-color: var(--color-accent);
-    transition: width 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.header__link--active::after {
+    background-color: var(--color-accent-alt2);
+    width: 100%;
 }
 
 .header__link:hover::after {
+    background-color: var(--color-accent);
     width: 100%;
 }
 
@@ -117,7 +124,6 @@ body.is-scrolled .header__top {
 /* Бургер-кнопка */
 .header__burger {
     display: none;
-    /* по умолчанию скрыта — видна будет только на мобильных */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -128,8 +134,6 @@ body.is-scrolled .header__top {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1100;
-    /* выше навигации */
 }
 
 .header__burger-line {
@@ -153,7 +157,7 @@ body.is-scrolled .header__top {
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     .header__top .header__container {
         justify-content: center;
         background: var(--color-accent);
@@ -215,4 +219,45 @@ body.is-scrolled .header__top {
     .header__link:hover {
         color: var(--color-light);
     }
+
+    .header__link::after {
+        bottom: -2px;
+        background-color: var(--color-light-gray);
+    }
+}
+
+@media (min-width: 950px) {
+
+    body.is-not-scrolled .header .logo__image {
+        height: 100px;
+        margin-bottom: -12px;
+    }
+
+    .header .logo::after {
+        content: "";
+        position: absolute;
+        bottom: 12px;
+        left: 140px;
+        height: 70px;
+        width: 0;
+        transition: all 0.3s ease;
+        display: block;
+        background-image: url("/images/line-rsplus.svg");
+        background-size: auto 100%;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    body.is-not-scrolled .header .logo::after {
+        bottom: 0;
+        left: 190px;
+        height: 100px;
+        width: calc(100% - 190px - 24px);
+        opacity: 1;
+    }
+
+    body.is-not-scrolled .header__nav {
+        margin-bottom: 45px;
+    }
+
 }

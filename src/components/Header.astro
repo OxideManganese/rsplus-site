@@ -1,3 +1,13 @@
+---
+const currentPath = Astro.url.pathname;
+
+const getActiveClass = (path: string) => 
+    (path === '/' ? currentPath === '/' : currentPath.startsWith(path)) 
+        ? 'header__link--active' 
+        : '';
+---
+
+
 <header class="header">
     <div class="header__top">
         <div class="header__container">
@@ -26,7 +36,7 @@
         <div class="header__container">
             <a href="/" class="header__logo logo">
                 <img
-                    src="/images/logo-rsplus.png"
+                    src="/images/logo-rsplus.svg"
                     alt="Логотип компании RS Plus"
                     class="logo__image"
                 />
@@ -37,11 +47,12 @@
                 <span class="header__burger-line"></span>
             </button>
             <nav class="header__nav">
-                <a href="/about" class="header__link">О компании</a>
-                <a href="/service" class="header__link">Сервис</a>
-                <a href="/equipment" class="header__link">Оборудование</a>
-                <a href="/parts" class="header__link">Запчасти</a>
-                <a href="/contacts" class="header__link">Контакты</a>
+                <a href="/" class={`header__link ${getActiveClass('/')}`}>Главная</a>
+                <a href="/service" class={`header__link ${getActiveClass('/service')}`}>Сервис</a>
+                <a href="/equipment" class={`header__link ${getActiveClass('/equipment')}`}>Оборудование</a>
+                <a href="/modernization" class={`header__link ${getActiveClass('/modernization')}`}>Модернизации</a>
+                <a href="/parts" class={`header__link ${getActiveClass('/parts')}`}>Запчасти</a>
+                <a href="/contacts" class={`header__link ${getActiveClass('/contacts')}`}>Контакты</a>
             </nav>
         </div>
     </div>

@@ -2,15 +2,16 @@
   /* Основные цвета */
   --color-dark: #17406D;
   --color-light-gray: rgb(238, 238, 238);
+  --color-gray: #5a5a5c;
   --color-light: #DBEFF9;
 
   /* Акцентные и дополнительные */
   --color-accent: #0F6FC6;
-  --color-accent-alt1: #009DD9;
-  --color-accent-alt2: #0BD0D9;
-  --color-accent-alt3: #10CF9B;
-  --color-accent-alt4: #7CCA62;
-  --color-accent-alt5: #A5C249;
+  --color-accent-alt1: #d61f26;
+  --color-accent-alt2: #f49037;
+  --color-accent-alt3: #5a5a5c;
+  --color-accent-alt4: #25917f;
+  --color-accent-alt5: #216399;
   --color-accent-alt6: #F49100;
   --color-accent-alt7: #85DFD0;
 
@@ -19,6 +20,7 @@
   --color-text-negative: #fff;
   --color-border: #e5e5e577;
   --color-bg: #fff;
+  --color-bg-alt: #f5f5f5; /* Добавляем новый серый цвет */
 
   /* Контейнер и размеры */
   --container-width: 1200px;

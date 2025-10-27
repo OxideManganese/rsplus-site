@@ -1,0 +1,71 @@
+.section--clients {
+    background-color: var(--color-bg-alt);
+    padding: 48px var(--container-padding);
+    overflow: hidden;
+}
+
+.section--clients .section__title {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    margin-bottom: 32px;
+}
+
+.clients-logos-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.clients-logos-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  animation: scroll-logos 30s linear infinite;
+}
+
+.clients-logos-track img {
+    max-height: 80px;
+    max-width: 160px;
+    min-height: 50px;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+    flex-shrink: 0;
+}
+
+
+@keyframes scroll-logos {
+  from { transform: translateX(0); }
+  to { transform: translateX(var(--scroll-width)); }
+}
+
+
+/* Градиенты по краям для плавного въезда и выезда */
+.clients-logos-wrapper::before,
+.clients-logos-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.clients-logos-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-alt) 0%, transparent 100%);
+}
+
+.clients-logos-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-alt) 0%, transparent 100%);
+}
+
+@media (max-width: 768px) {
+  .clients-logos-track img {
+    max-height: 40px;
+    min-height: 30px;
+    max-width: 120px;
+  }
+}

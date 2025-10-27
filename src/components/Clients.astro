@@ -1,0 +1,32 @@
+---
+import "../styles/clients.css";
+
+interface Client {
+  src: string;
+  alt: string;
+}
+
+export interface Props {
+  title?: string;
+  clients: Client[];
+}
+
+const { title = 'Наши клиенты', clients } = Astro.props;
+---
+
+<section class="section section--clients">
+  <div class="section__content">
+    {title && <h2 class="section__title">{title}</h2>}
+    <div class="clients-logos-wrapper">
+      <div class="clients-logos-track">
+        {clients.map(({ src, alt }) => (
+          <img src={src} alt={alt} loading="lazy" />
+        ))}
+        {clients.map(({ src, alt }) => (
+          <img src={src} alt={alt} loading="lazy" aria-hidden="true" />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+

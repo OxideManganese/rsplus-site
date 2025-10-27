@@ -1,27 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Элементы
-  const header = document.querySelector('.header__bottom');
+  const headerBottom = document.querySelector('.header__bottom');
+  const headerTop = document.querySelector('.header__top');
   const footer = document.querySelector('.footer');
 
   // Установка CSS-переменных с высотами
   function updateHeights() {
-    if (header) {
-      document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
-    }
-    if (footer) {
-      document.documentElement.style.setProperty('--footer-height', `${footer.offsetHeight}px`);
-    }
+    const headerHeight = headerTop.offsetTop == 0 ? headerTop.offsetHeight + headerBottom.offsetHeight : headerBottom.offsetHeight; 
+    document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+    document.documentElement.style.setProperty('--footer-height', `${footer.offsetHeight}px`);
   }
 
   // Управление состоянием прокрутки
   function updateScrollState() {
-    const isScrolled = window.scrollY > 0;
+    const isScrolled = window.scrollY > headerTop.offsetHeight;
+    const isNotScrolled = !isScrolled;
     document.body.classList.toggle('is-scrolled', isScrolled);
+    document.body.classList.toggle('is-not-scrolled', isNotScrolled);
   }
 
   // Обработчики событий
   function onScroll() {
     updateScrollState();
+    updateHeights();
   }
 
   function onResize() {

@@ -1,0 +1,33 @@
+---
+// ContentCard.astro
+const { title, subtitle, colorIndex = 1, buttonLabel, buttonLink, icon } = Astro.props;
+import "../styles/content-card.css";
+---
+
+<article class={`content-card content-card--${colorIndex}`}>
+  <div class="content-card__bg"></div>
+  <div class="content-card__body">
+    <div class="content-card__icon">
+    <div class="content-card__circle circle">
+      <div class="content-card__radius circle__radius">
+        <div class="content-card__radius circle__radius circle__radius--nested " >
+          <div class="content-card__radius circle__radius circle__radius--nested"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+    {title && <h3 class="content-card__title">{title}</h3>}
+    {subtitle && <h4 class="content-card__subtitle">{subtitle}</h4>}
+    <div class="content-card__text">
+      <slot />
+    </div>
+  </div>
+
+  {buttonLabel && (
+    <div class="content-card__footer">
+      <a href={buttonLink} class="btn content-card__btn">
+        {buttonLabel}
+      </a>
+    </div>
+  )}
+</article>
