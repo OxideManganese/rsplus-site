@@ -59,6 +59,7 @@ const clients = [
             subtitle="Проектируем и поставляем линии для полного цикла фанерного производства"
             colorIndex={5}
             buttonLabel="Смотреть решения"
+            icon="lines"
           >
             <ul class="content-card__list">
               <li>Проверенные современные технические решения</li>
@@ -69,11 +70,12 @@ const clients = [
             </ul>
           </ContentCard>
 
-                    <ContentCard
+          <ContentCard
             title="Развитие и обучение"
             subtitle="Помогаем предприятиям достигать нового уровня операционной эффективности."
             colorIndex={3}
             buttonLabel="Подробнее"
+            icon="training"
           >
             <ul class="content-card__list">
               <li>Подготовка планов развития</li>
@@ -87,6 +89,7 @@ const clients = [
             colorIndex={1}
             buttonLabel="Каталог запчастей"
             subtitle="Надёжные решения для бесперебойной работы оборудования"
+            icon="parts"
           >
             <ul class="content-card__list">
               <li>Подбор аналогов и возможность поставки оригинальных запчастей</li>
@@ -100,6 +103,7 @@ const clients = [
             subtitle="Поддерживаем эффективность и продлеваем срок службы оборудования"
             colorIndex={2}
             buttonLabel="Подробнее"
+            icon="instrumenty"
           >
           <ul class="content-card__list"> 
             <li>Общие инспекции оборудования (механика, электрика, автоматика)</li>
@@ -113,6 +117,7 @@ const clients = [
             subtitle="Модернизируем оборудование для роста производительности и надёжности"
             colorIndex={4}
             buttonLabel="Смотреть проекты"
+            icon="modernization"
           >
             <ul class="content-card__list">
               <li>Внедрение инновационных решений для всех типов линий.</li>
@@ -127,7 +132,7 @@ const clients = [
 
   <section class="section section--clients">
   <div class="section__content">
-    <h2 class="section__title">Наши клиенты</h2>
+    <h2 class="section__title">Наши партнёры</h2>
     <div class="clients-logos-wrapper">
       <div class="clients-logos-track">
         {clients.map(({ src, alt }) => (
@@ -150,7 +155,7 @@ const clients = [
 
   <section class="section section--posts">
     <div class="section__content">
-      <div class="wide-content-block wide-content-block--news">
+      <article class="wide-content-block wide-content-block--news">
         <div class="wide-content-block__content">
           <h3 class="wide-content-block__title">Внедрение новой системы индексов удовлетворённости клиентов</h3>
           <p>
@@ -163,8 +168,13 @@ const clients = [
         <div class="wide-content-block__media">
           <img class="wide-content-block__image" src="https://vesti42.ru/wp-content/uploads/2023/11/brend.jpg" alt="Внедрение новой системы индексов удовлетворённости клиентов">
         </div>
-      </div>
+      </article>
     </div>
+    <script src="/scripts/TgPosts.js" is:inline></script>
+    <script src="/scripts/insertNews.js" is:inline></script>
+    <script is:inline>
+      TgPosts('rsplusspb', insertNews, console.error);
+    </script>
   </section>
 
 

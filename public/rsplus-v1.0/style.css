@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'rsplus';
+  src:  url('fonts/rsplus.eot?hqkxbb');
+  src:  url('fonts/rsplus.eot?hqkxbb#iefix') format('embedded-opentype'),
+    url('fonts/rsplus.ttf?hqkxbb') format('truetype'),
+    url('fonts/rsplus.woff?hqkxbb') format('woff'),
+    url('fonts/rsplus.svg?hqkxbb#rsplus') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'rsplus' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-instrumenty:before {
+  content: "\e902";
+}
+.icon-modernization:before {
+  content: "\e903";
+}
+.icon-lines:before {
+  content: "\e904";
+}
+.icon-parts:before {
+  content: "\e905";
+}
+.icon-training:before {
+  content: "\e906";
+}
+.icon-mnotv:before {
+  content: "\e901";
+}
+.icon-telegram:before {
+  content: "\e900";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-bubble2:before {
+  content: "\e96e";
+}
+.icon-cogs:before {
+  content: "\e995";
+}
+.icon-mail4:before {
+  content: "\ea86";
+}
+.icon-rss2:before {
+  content: "\ea9c";
+}

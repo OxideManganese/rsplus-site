@@ -140,8 +140,8 @@
 }
 
 .circle__radius {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   border-radius: 100%;
   border: 2px solid var(--color-accent);
   display: inline-grid;
