@@ -1,0 +1,37 @@
+[
+  {
+    "id": "rsplus_spb/1",
+    "date": "2025-10-27T13:04:04+00:00",
+    "time": "13:04",
+    "text": "Channel created",
+    "parsedDate": "2025-10-27T13:04:04.000Z",
+    "formattedDate": "27 октября 2025 г.",
+    "images": [],
+    "videos": [],
+    "type": "srvcmsg"
+  },
+  {
+    "id": "rsplus_spb/2",
+    "date": "2025-10-27T13:04:05+00:00",
+    "time": "13:04",
+    "text": "Channel photo updated",
+    "parsedDate": "2025-10-27T13:04:05.000Z",
+    "formattedDate": "27 октября 2025 г.",
+    "images": [],
+    "videos": [],
+    "type": "srvcmsg"
+  },
+  {
+    "id": "rsplus_spb/3",
+    "date": "2025-10-27T13:06:03+00:00",
+    "time": "13:06",
+    "text": "<b>Внедрение новой системы индексов удовлетворённости клиентов</b><br>С начала 2025 года организация совместно с руководством заказчиков запускает новую инициативу — систему индексов удовлетворённости по всем сервисным визитам. Цель проекта — повысить качество обслуживания и наглядно измерять результаты каждого визита, анализируя выполненные задачи и обратную связь клиентов.",
+    "parsedDate": "2025-10-27T13:06:03.000Z",
+    "formattedDate": "27 октября 2025 г.",
+    "images": [
+      "url('https://cdn4.telesco.pe/file/TkiBjWBc8I7yJmdEd6zdom2Sf5lld-ZBVy3yCuQCoHz_6GTy_OddaSdUMEoOlUwXUAY84cyATbSqFlI5yLr0KVZ6eiHxaicihArdES6sY2G7VHC2MzGHeFfyI0R3mQvCmsPMRdx-6S2YkTHcGft56tI9xyBDoqq4SsxjxNHRL0aZVm08vcY1r91wBzG0sy4e6Q_Al5uW6FuJk4j9HHp7v0vPMi1jwfTumyyafPJ7j261-2KcMMWRyYZxBrvSu_Av3Nd7hs3NgJLumo3aWzFtdkcyQ0MJ_xlF-o_f_QRxOuBeLx0iqRXaoo8ASM5FCcGqTIT32VhmgPHTn8p3ieqBbQ.jpg')"
+    ],
+    "videos": [],
+    "type": "post"
+  }
+]

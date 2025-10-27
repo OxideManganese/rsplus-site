@@ -6,6 +6,7 @@
     --font-size-base: 16px;
     --font-size-lg: 20px;
     --font-size-sm: 14px;
+    --font-size-hd: 1.5em;
     --line-height-base: 1.5;
     --line-height-lg: 1.75;
     --line-height-sm: 1.25;
@@ -19,7 +20,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2rem;
-  color: var(--color-accent);
+}
+
+h2 {
+  font-size: var(--font-size-hd)
 }
 
 p {

@@ -4,12 +4,6 @@
     overflow: hidden;
 }
 
-.section--clients .section__title {
-    text-align: center;
-    font-size: var(--font-size-lg);
-    margin-bottom: 32px;
-}
-
 .clients-logos-wrapper {
     position: relative;
     overflow: hidden;
