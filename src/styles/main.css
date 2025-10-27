@@ -26,8 +26,6 @@
 
 .section:nth-of-type(odd) {
     background-color: var(--color-bg-alt);
-    width: 100%;
-    max-width: none;
 }
 
 .section__content {

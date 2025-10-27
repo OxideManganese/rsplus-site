@@ -13,7 +13,7 @@
 .clients-logos-wrapper {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: calc(100% - var(--container-padding) * 2);
 }
 
 .clients-logos-track {
