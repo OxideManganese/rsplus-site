@@ -115,7 +115,7 @@
 }
 
 .content-card__btn {
-  background-color: var(--card-color);
+  background-color: var(--card-color) !important;
   filter: none;
 }
 
