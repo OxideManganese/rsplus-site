@@ -65,6 +65,7 @@
     background-color: var(--color-bg);
     min-height: 300px;
     display: flex;
+    overflow: hidden;
 }
 
 .wide-content-block:nth-of-type(odd) {
@@ -104,12 +105,18 @@
 }
 
 @media (max-width: 950px) {
+    .wide-content-blocks-container {
+        grid-auto-rows: min-content;
+    }
+
     .wide-content-block {
-        flex-direction: column;
+        /* flex-direction: column; */
+        display: block;
     }
 
     .wide-content-block__content {
         flex: 0 0 auto;
+        width: 100%;
         padding: 40px 25px 25px;
     }
 }
@@ -126,6 +133,7 @@
 
 .wide-content-block__media {
     background-color: var(--color-text);
+    max-height: 400px;
     display: flex;
     flex: 0 0 50%;
     align-items: center;
