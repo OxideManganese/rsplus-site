@@ -84,10 +84,23 @@
   margin-top: -30px;
   color: var(--card-color);
   font-weight: 550;
+  transition: all .5s ease;
+}
+
+.is-not-scrolled .content-card__icon {
+  font-size: 2em;
+  margin-top: 0;
+  font-weight: 1000;
 }
 
 .content-card__radius {
   border-color: var(--card-color);
+  --radius: 130px;
+  transition: all .5s ease;
+}
+
+.is-not-scrolled .content-card__radius {
+  --radius: 75px;
 }
 
 .content-card__bg {
@@ -103,6 +116,12 @@
 
 .content-card__btn {
   background-color: var(--card-color);
+  filter: none;
+}
+
+.content-card__btn:hover {
+  background-color: var(--card-color);
+  filter: brightness(1.2) blur(.5px) grayscale(.5);
 }
 
 @media (max-width: 768px) {

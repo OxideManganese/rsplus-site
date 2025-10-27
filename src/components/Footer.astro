@@ -1,5 +1,55 @@
-<footer class="footer">
-  <div class="footer__container">
-    <p class="footer__text">© {new Date().getFullYear()} РС+. Все права защищены.</p>
+---
+// Footer.astro
+---
+
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+
+    <div class="footer__grid" aria-label="Подвал сайта">
+
+      <div class="footer__brand">
+        <div class="footer__brand-title">
+          <img src="/images/logo-rsplus.svg" alt="Логотип компании RS Plus" class="footer__brand-logo logo__image logo__image--white">
+        </div>
+        <div class="footer__brand-sub">РС Плюс — техническое сопровождение фанерных производств в России и СНГ.</div>
+        <div>ОГРН: 1237800040334<br/>ИНН/КПП: 7810974484 / 781001001</div>
+      </div>
+
+      <div class="footer__contacts" aria-label="Контакты">
+        <h4>Контакты</h4>
+        <div>ул. Цветочная, 18А помещ. 2-н офис 210,<br>Санкт-Петербург, Россия.</div>
+        <div><span class="icon-mail2"></span><a href="mailto:info@example.com">info@example.com</a></div>
+        <div><span class="icon-phone"></span><a href="tel:+79111620055">+7 (911) 162-00-55</a> <i>(сервис)</i></div>
+        <div><span class="icon-phone"></span><a href="tel:+79816815741">+7 (981) 681-57-41</a> <i>(запасные части)</i></div>
+        <div><span class="icon-telegram1"></span><a href="https://t.me/rsplusspb">@rsplisspb</a> <i>(новости комнании)</i></div>
+      </div>
+
+      <div class="footer__links" role="navigation" aria-label="Ссылки подвала">
+        <div class="footer__link-block">
+          <h4>Продукты</h4>
+          <ul>
+            <li><a href="/service">Сервисное обслуживание ТОиР</a></li>
+            <li><a href="/lines">Γроизводственные линии</a></li>
+            <li><a href="/modernization">Проекты модернизации</a></li>
+          </ul>
+        </div>
+        <div class="footer__link-block">
+          <h4>Компания</h4>
+          <ul>
+            <li><a href="/">О компании</a></li>
+            <li><a href="/contacts">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__meta">
+      <div class="footer__meta-row">
+        <div class="footer__legal">ООО "РС+", 2023-{new Date().getFullYear()}. Все права защищены.</div>
+        <div style="font-size:13px;color:var(--muted);">Политика конфиденциальности • Условия использования</div>
+      </div>
+    </div>
+
   </div>
 </footer>

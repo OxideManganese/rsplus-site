@@ -1,9 +1,11 @@
 :root {
   /* Основные цвета */
   --color-dark: #17406D;
+  --color-darknes: #0c1d30;
   --color-light-gray: rgb(238, 238, 238);
   --color-gray: #5a5a5c;
   --color-light: #DBEFF9;
+  --color-muted-light: #ddd;
 
   /* Акцентные и дополнительные */
   --color-accent: #0F6FC6;

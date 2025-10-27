@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'rsplus';
-  src:  url('fonts/rsplus.eot?hqkxbb');
-  src:  url('fonts/rsplus.eot?hqkxbb#iefix') format('embedded-opentype'),
-    url('fonts/rsplus.ttf?hqkxbb') format('truetype'),
-    url('fonts/rsplus.woff?hqkxbb') format('woff'),
-    url('fonts/rsplus.svg?hqkxbb#rsplus') format('svg');
+  src:  url('fonts/rsplus.eot?elrkqo');
+  src:  url('fonts/rsplus.eot?elrkqo#iefix') format('embedded-opentype'),
+    url('fonts/rsplus.ttf?elrkqo') format('truetype'),
+    url('fonts/rsplus.woff?elrkqo') format('woff'),
+    url('fonts/rsplus.svg?elrkqo#rsplus') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-telegram1:before {
+  content: "\e907";
+}
 .icon-instrumenty:before {
   content: "\e902";
 }
@@ -54,6 +57,9 @@
 }
 .icon-cogs:before {
   content: "\e995";
+}
+.icon-mail2:before {
+  content: "\ea84";
 }
 .icon-mail4:before {
   content: "\ea86";

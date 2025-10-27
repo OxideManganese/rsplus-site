@@ -1,7 +1,7 @@
 @import './variables.css';
 @import './typography.css';
 @import './header.css';
-/* @import './footer.css'; */
+@import './footer.css';
 
 .page {
     margin: 0;
@@ -46,6 +46,10 @@
     width: auto;
     display: block;
     transition: all 0.3s ease;
+}
+
+.logo__image--white {
+    filter: contrast(0%) brightness(200%);
 }
 
 
@@ -125,7 +129,7 @@
   font-weight: 550;
   padding: 12px 24px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
   font-size: var(--font-size-sm);
 }
 
@@ -140,8 +144,8 @@
 }
 
 .circle__radius {
-  width: 130px;
-  height: 130px;
+  width: var(--radius, 130px);
+  height: var(--radius, 130px);;
   border-radius: 100%;
   border: 2px solid var(--color-accent);
   display: inline-grid;
