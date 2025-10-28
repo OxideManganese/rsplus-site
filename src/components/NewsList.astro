@@ -1,0 +1,48 @@
+---
+// Пустой фронтенд-компонент, рендерим контейнер
+---
+
+<div id="news-list" class="wide-content-blocks-container">
+  <p>Загрузка новостей...</p>
+</div>
+
+<script is:inline>
+  async function loadNews() {
+    const container = document.getElementById('news-list');
+    try {
+      const res = await fetch('/api/news');
+      const posts = await res.json();
+
+      if (!posts.length) {
+        container.innerHTML = '<p>Новостей пока нет.</p>';
+        return;
+      }
+
+      container.innerHTML = posts
+        .filter(post => post.type === 'post') // если нужно
+        .slice()
+        .reverse()
+        .map(post => `
+          <article class="wide-content-block wide-content-block--news">
+            <div class="wide-content-block__content">
+              ${post.images?.[0] ? `<img class="wide-content-block__background-image" src="${post.images[0]}" alt="Фон">` : ''}
+              ${post.headline ? `<h3 class="wide-content-block__title">${post.headline}</h3>` : ''}
+              <p>${post.text.length > 350 ? post.text.replace(/(<([^>]+)>)/gi, "").slice(0, 200) + '...' : post.text}</p>
+              ${post.text.length > 350 ? `<p><a class="btn" href="https://t.me/${post.id}" target="_blank">Читать далее</a></p>` : ''}
+              <div class="wide-content-block__information">
+                <a href="https://t.me/${post.id}" target="_blank">t.me/${post.id}</a> | ${post.formattedDate}
+              </div>
+            </div>
+            ${post.images?.[0] ? `<div class="wide-content-block__media"><img class="wide-content-block__image" src="${post.images[0]}" alt="${post.headline || "Изображение поста"}"></div>` : ''}
+          </article>
+        `)
+        .join('');
+
+    } catch (err) {
+      container.innerHTML = '<p>Ошибка при загрузке новостей.</p>';
+      console.error(err);
+    }
+  }
+
+  loadNews();
+</script>
