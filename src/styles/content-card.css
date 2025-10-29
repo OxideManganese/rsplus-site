@@ -26,13 +26,13 @@
 }
 
 /* Цветовые модификаторы */
-.content-card--1 { --card-color: var(--color-accent-alt1); }
-.content-card--2 { --card-color: var(--color-accent-alt2); }
-.content-card--3 { --card-color: var(--color-accent-alt3); }
-.content-card--4 { --card-color: var(--color-accent-alt4); }
-.content-card--5 { --card-color: var(--color-accent-alt5); }
-.content-card--6 { --card-color: var(--color-accent-alt6); }
-.content-card--7 { --card-color: var(--color-accent-alt7); }
+.content-card--accent-alt1 { --card-color: var(--color-accent-alt1); }
+.content-card--accent-alt2 { --card-color: var(--color-accent-alt2); }
+.content-card--accent-alt3 { --card-color: var(--color-accent-alt3); }
+.content-card--accent-alt4 { --card-color: var(--color-accent-alt4); }
+.content-card--accent-alt5 { --card-color: var(--color-accent-alt5); }
+.content-card--accent-alt6 { --card-color: var(--color-accent-alt6); }
+.content-card--accent-alt7 { --card-color: var(--color-accent-alt7); }
 
 .content-card__subtitle {
   font-size: var(--font-size-lg);

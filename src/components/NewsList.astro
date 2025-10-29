@@ -27,7 +27,7 @@
             <div class="wide-content-block__content">
               ${post.images?.[0] ? `<img class="wide-content-block__background-image" src="${post.images[0]}" alt="Фон">` : ''}
               ${post.headline ? `<h3 class="wide-content-block__title">${post.headline}</h3>` : ''}
-              <p>${post.text.length > 350 ? post.text.replace(/(<([^>]+)>)/gi, "").slice(0, 200) + '...' : post.text}</p>
+              <p>${post.text.length > 350 ? post.text.slice(0, 150) + post.text.replace(/(<([^>]+)>)/gi, "").slice(150, 200) + '...' : post.text}</p>
               ${post.text.length > 350 ? `<p><a class="btn" href="https://t.me/${post.id}" target="_blank">Читать далее</a></p>` : ''}
               <div class="wide-content-block__information">
                 <a href="https://t.me/${post.id}" target="_blank">t.me/${post.id}</a> | ${post.formattedDate}
