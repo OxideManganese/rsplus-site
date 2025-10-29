@@ -94,6 +94,19 @@
   white-space: nowrap;
 }
 
+.scheme__point:hover 
+.scheme__label, 
+.scheme__point.is-active 
+.scheme__label {
+  text-overflow: clip;
+  white-space: normal;
+  width: var(--width);
+  opacity: 1 !important;
+  max-height: none;
+  pointer-events: all;
+  cursor: auto;
+}
+
 .scheme__label ul {
   list-style: none;
   padding: 0;
@@ -125,26 +138,8 @@
   text-align: right;
 }
 
-.scheme:not(:has(.is-active)):hover .scheme__label, 
-.scheme__point.is-active .scheme__label {
-  text-overflow: clip;
-  white-space: normal;
-  width: var(--width);
-}
-
-.scheme:not(:has(.is-active)):hover .scheme__label {
-    opacity: .5;
-}
-
-
 .scheme__point:hover {
   z-index: 5;
-}
-
-.scheme__point:hover .scheme__label,
-.scheme__point.is-active .scheme__label {
-  opacity: 1 !important;
-  max-height: none;
 }
 
 .scheme__point.is-active {
