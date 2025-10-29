@@ -22,8 +22,30 @@ h1 {
   font-size: 2rem;
 }
 
+h1 strong {
+    font-size: 3em;
+    color: var(--color-competence, --color-accent);
+    margin: 0 -7px;
+}
+
+@media screen and (max-width: 800px) {
+  h1 strong {
+    font-size: 1.2em;
+    margin: 0 auto;
+  }
+}
+
+
 h2 {
   font-size: var(--font-size-hd)
+}
+
+h3 {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-competence, --color-accent);
+  margin: 10px 0;
 }
 
 p {

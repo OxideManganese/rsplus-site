@@ -1,8 +1,8 @@
 ---
-// Пустой фронтенд-компонент, рендерим контейнер
+
 ---
 
-<div id="news-list" class="wide-content-blocks-container">
+<div id="news-list" class="content-blocks-container">
   <p>Загрузка новостей...</p>
 </div>
 
@@ -19,7 +19,7 @@
       }
 
       container.innerHTML = posts
-        .filter(post => post.type === 'post') // если нужно
+        .filter(post => post.type === 'post')
         .slice()
         .reverse()
         .map(post => `
