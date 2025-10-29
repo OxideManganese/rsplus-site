@@ -23,14 +23,14 @@ h1 {
 }
 
 h1 strong {
-    font-size: 3em;
+    font-size: 5rem;
     color: var(--color-competence, --color-accent);
     margin: 0 -7px;
 }
 
 @media screen and (max-width: 800px) {
   h1 strong {
-    font-size: 1.2em;
+    font-size: 2.5rem;
     margin: 0 auto;
   }
 }
@@ -39,6 +39,7 @@ h1 strong {
 h2 {
   font-size: var(--font-size-hd)
 }
+
 
 h3 {
   font-size: var(--font-size-base);

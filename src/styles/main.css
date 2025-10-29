@@ -3,6 +3,7 @@
 @import './header.css';
 @import './footer.css';
 @import './content-card.css';
+@import './scheme.css';
 
 .page {
     margin: 0;

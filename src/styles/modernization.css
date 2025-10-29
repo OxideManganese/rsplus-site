@@ -2,75 +2,97 @@
   --color-competence: var(--color-accent-alt4);
 }
 
-.modernization {
-  font-family: "Inter", sans-serif;
-  color: #222;
+.wide-content-block__title--jusy-line {
+  color: var(--color-competence);
+  font-size: 2.5rem;
 }
 
-/* Основная структура */
-.modernization__text {
-  color: var(--color-gray);
-    line-height: var(--line-height-lg);
-    margin-bottom: 30px;
-  }
-  
-  .modernization__image img {
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  @media screen and (min-width: 1200px) {
-  .modernization__image {
-    margin-top: -100px;
-  }
-  .section__title--modernization {
-    margin-top: 10px;
-    position: relative;
-  }
+.wide-content-block__title--jusy-line strong {
+  color: #555555;
+  font-size: 1.5em;
 }
 
-/* Категории модернизации */
-.modernization__categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  border-top: 1px solid var(--color-muted-light);
-  border-bottom: 1px solid var(--color-muted-light);
-  padding: 40px 0;
+.section__title {
+  margin: 24px auto;
 }
 
-.modernization__category {
-  flex: 1 1 260px;
+.section--modernization__categories {
+  padding: 24px 0;
+  margin: 0 -6px;
 }
 
-.modernization__list {
+.section--modernization__categories::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.section--modernization__category {
+  float: left;
+  margin: 6px;
+  width: calc(100% / 3 - 24px);
+}
+
+.section--modernization__category:not(:has(h3)) {
+  padding-top: 24px;
+}
+
+.section--modernization__categories--two-columns
+.section--modernization__category {
+  width: calc(50% - 24px);
+}
+
+.section--modernization__categories--uno-columns
+.section--modernization__category {
+  width: calc(100% - 24px);
+  font-size: var(--font-size-lg);
+}
+
+.section--modernization__list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.modernization__item {
+.section--modernization__item {
   position: relative;
   padding-left: 15px;
   margin-bottom: 6px;
   line-height: var(--line-height-base);
 }
 
-.modernization__item::before {
+.section--modernization__item[onclick^="activateSchemePoint"] {
+  cursor: pointer;
+}
+
+.section--modernization__item[onclick^="activateSchemePoint"]:hover {
+  text-decoration: underline;
+  color: var(--color-accent-alt2);
+}
+
+.section--modernization__item::before {
   content: "-";
   position: absolute;
   left: 0;
   color: var(--color-accent-alt4);
 }
 
-/* Перспективные проекты */
-.modernization__projects {
-  margin-top: 80px;
+.content-cards--details {
+  margin: 36px 0 24px;
 }
 
-.modernization__projects-title {
-  text-align: center;
-  margin-bottom: 50px;
-  color: #395870;
+.content-card--details {
+  border-bottom-color: #406481;
+}
+
+@media (max-width: 768px) {
+  .section--modernization__category {
+    width: 100% !important;
+    padding-top: none !important;
+  }
+
+  .section--modernization__scheme {
+    margin: -24px -24px 0;
+  }
+  
 }

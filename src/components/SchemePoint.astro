@@ -1,0 +1,29 @@
+---
+interface Props {
+  id: string;          
+  x: number;           // %
+  y: number;           // %
+  side?: "left" | "right";
+}
+
+const { id, x, y, side } = Astro.props;
+const computedSide = side ?? (x < 50 ? "right" : "left");
+const LABEL_GAP = 12;
+const LABEL_WIDTH = 220;
+---
+
+<div
+  class="scheme__point"
+  data-id={id}
+  style={`top:${y}%; left:${x}%;`}
+>
+  <div class="scheme__dot" data-side={computedSide}>
+    <div
+      class="scheme__label"
+      data-side={computedSide}
+      style={`--gap:${LABEL_GAP}px; --width:${LABEL_WIDTH}px;`}
+    >
+      <slot />
+    </div>
+  </div>
+</div>

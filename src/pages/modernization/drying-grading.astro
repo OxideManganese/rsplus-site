@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SchemePoint from "../../components/SchemePoint.astro";
+import "../../styles/modernization.css";
+---
+
+<script src="/scripts/scheme.js" defer></script>
+
+<BaseLayout title="Модернизации линий сушки и сортировки | РС+">
+    <section class="section section--hero">
+        <div class="section__content">
+            <div class="wide-content-block wide-content-block--competence">
+                <div class="pale-background wide-content-block__bg"></div>
+                <div class="wide-content-block__content">
+                    <h1 class="wide-content-block__title wide-content-block__title--jusy-line">
+                        Модернизации<br>
+                        <strong>Линия сушки и сортировки</strong>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--modernization section--drying-grading">
+        <div class="section__content">
+            <div class="section--modernization__intro">
+                <div class="section--modernization__scheme scheme">
+                    <img src="/images/modernization/line-drying-grading-overview.png" alt="Линия сушки и сортировки">
+                    <div class="scheme__points-container">
+                        <SchemePoint id="fan-filter" x={32} y={53}>Автоматическая смена сетчатого фильтра вентилятора</SchemePoint>
+                        <SchemePoint id="heating-system" x={40} y={50}>Модернизация/замена системы нагрева (газ/пар/термомасло)</SchemePoint>
+                        <SchemePoint id="stacker" x={62} y={42}  side="right">
+                            Стопоукладка:
+                            <ul>
+                                <li>Полная замена стопоукладки</li>
+                                <li>Автоматическая подача поддонов</li>
+                                <li>Автоматическая выгрузка стопы</li>
+                            </ul>
+                        </SchemePoint>
+                        <SchemePoint id="scanner" x={64} y={44}>Модернизация/установка сканеров (совместно с ЛИС)</SchemePoint>
+                        <SchemePoint id="leveling" x={66} y={46} side="right">Система выравнивания шпона</SchemePoint>
+                        <SchemePoint id="refeeder" x={68} y={55}>Установка системы повторной подачи шпона (Refeeder)</SchemePoint>
+                        <SchemePoint id="jam-detection" x={50} y={60} side="right">Система обнаружения заторов</SchemePoint>
+                        <SchemePoint id="non-stop" x={5} y={55} side="right">Система Non-stop</SchemePoint>
+                        <SchemePoint id="vacuum-loader" x={12} y={60}>Вакуумный загрузчик</SchemePoint>
+                        <SchemePoint id="humidity-control" x={27} y={53} side="left">
+                            <ul>
+                                <li>Автоматическая регулировка влажности</li>
+                                <li>Разделение на зоны</li>
+                                <li>Добавление дополнительных анализаторов влажности</li>
+                            </ul>
+                        </SchemePoint>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section--modernization__categories">
+                <div class="section--modernization__category">
+                    <h3 class="section--modernization__category-title">Сушка</h3>
+                    <ul class="section--modernization__list">
+                        <li class="section--modernization__item" onclick="activateSchemePoint('fan-filter')">Автоматическая смена сетчатого фильтра вентилятора</li>
+                        <li class="section--modernization__item" onclick="activateSchemePoint('heating-system')">Модернизация/замена системы нагрева (газ/пар/термомасло)</li>
+                        <li class="section--modernization__item" onclick="activateSchemePoint('humidity-control')">Автоматическая регулировка влажности, разделение на зоны, анализаторы</li>
+                    </ul>
+                </div>
+
+                <div class="section--modernization__category">
+                    <h3 class="section--modernization__category-title">Сортировка</h3>
+                    <ul class="section--modernization__list">
+                        <li class="section--modernization__item" onclick="activateSchemePoint('scanner')">Модернизация/установка сканеров (совместно с ЛИС)</li>
+                        <li class="section--modernization__item" onclick="activateSchemePoint('refeeder')">Установка системы повторной подачи шпона (Refeeder)</li>
+                        <li class="section--modernization__item" onclick="activateSchemePoint('jam-detection')">Система обнаружения заторов</li>
+                        <li class="section--modernization__item" onclick="activateSchemePoint('non-stop')">Система Non-stop</li>
+                        <li class="section--modernization__item" onclick="activateSchemePoint('vacuum-loader')">Вакуумный загрузчик</li>
+                    </ul>
+                </div>
+
+                <div class="section--modernization__category">
+                    <h3 class="section--modernization__category-title">Комплексные решения</h3>
+                    <ul class="section--modernization__list">
+                        <li class="section--modernization__item">Капитальный ремонт станков под ключ</li>
+                        <li class="section--modernization__item">Экспертный сервис — аудит, обучение, сервисные программы</li>
+                        <li class="section--modernization__item">Поставка запасных частей</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--modernization-projects">
+        <div class="section__content">
+            <h2 class="section__title">Перспективные проекты</h2>
+            <div class="content-cards content-cards--details">
+
+                <div class="content-card content-card--details">
+                    <div class="content-card--details__image">
+                        <img src="/images/modernization/project-vacuum-loader.png" alt="Вакуумный загрузчик">
+                    </div>
+                    <div class="section--modernization__project-content">
+                        <h4 class="content-card__title">Вакуумный загрузчик с гидравлическим типпелем</h4>
+                        <p class="content-card__project-desc">Автоматизация загрузки и транспортировки шпона.</p>
+                    </div>
+                    <div class="content-card__footer">
+                        <button class="btn content-card__btn" onclick="activateSchemePoint('vacuum-loader')">Смотреть на схеме</button>
+                    </div>
+                </div>
+
+                <div class="content-card content-card--details">
+                    <div class="content-card--details__image">
+                        <img src="/images/modernization/project-nonstop.png" alt="Система Non-stop">
+                    </div>
+                    <div class="section--modernization__project-content">
+                        <h4 class="content-card__title">Доустановка системы Non-stop</h4>
+                        <p class="content-card__project-desc">Непрерывная работа линии без остановок для смены пакетов.</p>
+                    </div>
+                    <div class="content-card__footer">
+                        <button class="btn content-card__btn" onclick="activateSchemePoint('non-stop')">Смотреть на схеме</button>
+                    </div>
+                </div>
+
+                <div class="content-card content-card--details">
+                    <div class="content-card--details__image">
+                        <img src="/images/modernization/project-moisture-analyzers.png" alt="Анализаторы влажности">
+                    </div>
+                    <div class="section--modernization__project-content">
+                        <h4 class="content-card__title">Установка/замена анализаторов влажности</h4>
+                        <p class="content-card__project-desc">Точный контроль влажности и оптимизация режимов сушки.</p>
+                    </div>
+                    <div class="content-card__footer">
+                        <button class="btn content-card__btn" onclick="activateSchemePoint('humidity-control')">Смотреть на схеме</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</BaseLayout>

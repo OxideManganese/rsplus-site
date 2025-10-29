@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SchemePoint from "../../components/SchemePoint.astro";
+import "../../styles/modernization.css";
+---
+
+<script src="/scripts/scheme.js" defer></script>
+
+<BaseLayout title="Модернизации линий ламинирования | РС+">
+    <section class="section section--hero">
+        <div class="section__content">
+            <div class="wide-content-block wide-content-block--competence">
+                <div class="pale-background wide-content-block__bg"></div>
+                <div class="wide-content-block__content">
+                    <h1 class="wide-content-block__title wide-content-block__title--jusy-line">
+                        Модернизации<br>
+                        <strong>Линий ламинирования</strong>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--modernization section--laminating-line">
+        <div class="section__content">
+            <div class="section--modernization__intro">
+                <div class="section--modernization__scheme scheme scheme--dont-fold">
+                    <img src="/images/modernization/line-laminating-overview.png" alt="Линия ламинирования Raute">
+                    <div class="scheme__points-container">
+                        <SchemePoint id="sheet-loader" x={10} y={20}>Загрузчик листов</SchemePoint>
+                        <SchemePoint id="laminating-plates" x={54} y={50}>Поставка новых плит ламинирования</SchemePoint>
+                        <SchemePoint id="film-system" x={15} y={35}>Модернизация системы нанесения пленки</SchemePoint>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section--modernization__categories section--modernization__categories--two-columns">
+                <div class="section--modernization__category">
+                    <h3 class="section--modernization__category-title">Модернизация и поставка</h3>
+                    <ul class="section--modernization__list">
+                        <li class="section--modernization__item" onclick="activateSchemePoint('sheet-loader')">Загрузчик листов</li>
+                        <li class="section--modernization__item" onclick="activateSchemePoint('laminating-plates')">Поставка новых плит ламинирования</li>
+                        <li class="section--modernization__item" onclick="activateSchemePoint('film-system')">Модернизация системы нанесения пленки</li>
+                        <li class="section--modernization__item">Модернизация автоматики</li>
+                    </ul>
+                </div>
+
+                <div class="section--modernization__category">
+                    <ul class="section--modernization__list">
+                        <li class="section--modernization__item">Модернизация гидравлики</li>
+                        <li class="section--modernization__item">Капитальный ремонт станков под ключ</li>
+                        <li class="section--modernization__item">Экспертный сервис — технический/технологический аудит, обучение, сервисные программы</li>
+                        <li class="section--modernization__item">Поставка запасных частей</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

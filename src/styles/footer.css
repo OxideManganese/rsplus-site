@@ -59,7 +59,7 @@
 
     .footer a:hover {
         text-decoration: underline;
-        color: var(--color-accent-alt1);
+        color: var(--color-light-gray);
     }
 
     .footer__links {
