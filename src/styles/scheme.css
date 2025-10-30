@@ -150,13 +150,17 @@
   background: var(--color-accent-alt6);
 }
 
-
+@media (max-width: 768px) {
+  .scheme__label{
+    opacity: 0;
+  }
+}
 @media (min-width: 768px) {
   .scheme--dont-fold .scheme__label {
     text-overflow: clip;
     white-space: normal;
     width: var(--width);
-      opacity: .7;
+    opacity: .7;
     max-height: none;
   }
 }
