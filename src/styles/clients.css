@@ -1,13 +1,14 @@
-.section--clients {
-    background-color: var(--color-bg-alt);
-    padding: 48px var(--container-padding);
-    overflow: hidden;
+.section--clients
+.section__content {
+    padding: 72px var(--container-padding);
 }
 
 .clients-logos-wrapper {
     position: relative;
     overflow: hidden;
-    width: calc(100% - var(--container-padding) * 2);
+    box-sizing: border-box;
+    width: 100%;
+
 }
 
 .clients-logos-track {
@@ -15,7 +16,7 @@
   align-items: center;
   gap: 3rem;
   width: max-content;
-  animation: scroll-logos 30s linear infinite;
+  animation: scroll-logos 50s linear infinite;
 }
 
 .clients-logos-track img {
@@ -57,6 +58,18 @@
 }
 
 @media (max-width: 768px) {
+  .clients-logos-wrapper {
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0 calc(0px - var(--container-padding));
+  }
+  .clients-logos-track {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: max-content;
+    animation: scroll-logos 20s linear infinite;
+  }
   .clients-logos-track img {
     max-height: 40px;
     min-height: 30px;

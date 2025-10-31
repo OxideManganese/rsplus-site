@@ -18,7 +18,7 @@ const clients = [
   { src: "/images/clients/krasnyj-jakor.png", alt: "Красный Якорь" },
   { src: "/images/clients/krasnyj-octjabyr.svg", alt: "Красный Октябрь" },
   { src: "/images/clients/mfzavod.png", alt: "Мурашинский завод" },
-  { src: "/images/clients/nordeco.png", alt: "Nordeco" },
+  { src: "/images/clients/nordeco.png", alt: "Nordeco Plywood" },
   { src: "/images/clients/partfino.svg", alt: "Partfino" },
   { src: "/images/clients/plyterra.svg", alt: "Plyterra" },
   { src: "/images/clients/segezha-group.svg", alt: "Segezha Group" },
@@ -168,11 +168,13 @@ const clients = [
           }
         </div>
         <script is:inline>
-          window.addEventListener("load", function () {
+          function calculateScrollWidth() {
             const track = document.querySelector(".clients-logos-track");
-            const firstHalf = track.scrollWidth / 2;
+            const firstHalf = track.scrollWidth / 2 + 20;
             track.style.setProperty("--scroll-width", `-${firstHalf}px`);
-          });
+          }
+          window.addEventListener("load", calculateScrollWidth);
+          window.addEventListener("resize", calculateScrollWidth);
         </script>
       </div>
     </div>
