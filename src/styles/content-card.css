@@ -50,7 +50,6 @@
   max-width: 360px;
   padding-top: 150px;
   overflow: visible;
-  border-bottom-color: var(--color-muted-light);
 }
 
 .content-card--benefit {

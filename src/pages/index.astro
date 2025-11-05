@@ -78,20 +78,19 @@ const clients = [
           </ul>
         </ContentCard>
 
-        <ContentCard
-          title="Развитие и обучение"
-          subtitle="Помогаем предприятиям достигать нового уровня операционной эффективности."
-          colorIndex={3}
-          buttonLabel="Подробнее"
-          icon="training"
+                <ContentCard
+          title="Модернизация"
+          subtitle="Модернизируем оборудование для роста производительности и надёжности"
+          colorIndex={4}
+          buttonLabel="Смотреть проекты"
+          buttonLink="/modernization"
+          icon="modernization"
         >
           <ul class="content-card__list">
-            <li>Подготовка планов развития</li>
-            <li>
-              Помощь в производстве и обучении персонала, разработанная и
-              опробованная программа тренингов.
-            </li>
-            <li>Анализ бизнес-идеи, рентабельности и рисков</li>
+            <li>Внедрение инновационных решений для всех типов линий.</li>
+            <li>Замена устаревших узлов и технологий</li>
+            <li>Разработка агрегатов, АСУ и систем управления</li>
+            <li>Оптимизация процессов лущения и смежных операций</li>
           </ul>
         </ContentCard>
 
@@ -133,18 +132,19 @@ const clients = [
         </ContentCard>
 
         <ContentCard
-          title="Модернизация"
-          subtitle="Модернизируем оборудование для роста производительности и надёжности"
-          colorIndex={4}
-          buttonLabel="Смотреть проекты"
-          buttonLink="/modernization"
-          icon="modernization"
+          title="Развитие и обучение"
+          subtitle="Помогаем предприятиям достигать нового уровня операционной эффективности."
+          colorIndex={3}
+          buttonLabel="Подробнее"
+          icon="training"
         >
           <ul class="content-card__list">
-            <li>Внедрение инновационных решений для всех типов линий.</li>
-            <li>Замена устаревших узлов и технологий</li>
-            <li>Разработка агрегатов, АСУ и систем управления</li>
-            <li>Оптимизация процессов лущения и смежных операций</li>
+            <li>Подготовка планов развития</li>
+            <li>
+              Помощь в производстве и обучении персонала, разработанная и
+              опробованная программа тренингов.
+            </li>
+            <li>Анализ бизнес-идеи, рентабельности и рисков</li>
           </ul>
         </ContentCard>
       </div>
@@ -187,3 +187,15 @@ const clients = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  @media (min-width: 951px) {
+        .section--hero {
+      background-color: #70849c;
+      padding-bottom: 100px;
+    }
+    .section--services .section__content {
+      margin-top: -141px;
+    }
+  }
+</style>
