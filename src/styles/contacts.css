@@ -22,18 +22,18 @@
       object-fit: cover;
       border: 3px solid var(--color-accent);
       background: var(--color-dark);
+      margin-bottom: 15px;
     }
 
     .section--team__name {
       font-weight: 600;
       font-size: var(--font-size-lg);
-      margin-top: 15px;
+      margin-bottom: 10px;
     }
 
     .section--team__role {
       font-size: var(--font-size-base);
       color: var(--color-accent);
-      margin-bottom: 10px;
     }
 
     .section--team__desc {
