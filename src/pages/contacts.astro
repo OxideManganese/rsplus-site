@@ -1,12 +1,196 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/contacts.css";
 ---
 
 <BaseLayout title="Контакты | РС+">
-    <section class="section ">
+    <section class="section section--hero">
         <div class="section__content">
-            <h1 class="section__title">Контакты</h1>
-            <p>Страница в процессе написания</p>
+            <div class="wide-content-block wide-content-block--competence">
+                <div class="pale-background wide-content-block__bg"></div>
+                <div class="wide-content-block__content">
+                    <h1 class="wide-content-block__title">
+                        <strong>Контакты</strong>
+                    </h1>
+                    <p class="subheadline wide-content-block__subtitle">
+                        Свяжитесь с нужным специалистом
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
+
+    <section class="section section--team">
+        <div class="section__content">
+            <div class="section--team__list">
+                <div class="section--team__member">
+                    <img
+                        src="/images/contacts/zhorgoliani.jpg"
+                        alt="Жоржолиани Баграт Эристович"
+                        class="section--team__photo"
+                    />
+                    <div class="section--team__name">
+                        Жоржолиани Баграт Эристович
+                    </div>
+                    <div class="section--team__role">Генеральный директор</div>
+                    <div class="section--team__contacts">
+                        <a href="mailto:bagrat.zhorzholiani@rsplus-spb.ru"
+                            ><span class="icon-mail4"></span> bagrat.zhorzholiani@rsplus-spb.ru</a
+                        >
+                        <a href="tel:+79857607735"
+                            ><span class="icon-phone"></span> +7 (985) 760-77-35</a
+                        >
+                    </div>
+                </div>
+
+                <div class="section--team__member">
+                    <img
+                        src="/images/contacts/kirpichnikov.jpg"
+                        alt="Кирпичников Александр Викторович"
+                        class="section--team__photo"
+                    />
+                    <div class="section--team__name">
+                        Кирпичников Александр Викторович
+                    </div>
+                    <div class="section--team__role">
+                        Исполнительный директор
+                    </div>
+                    <div class="section--team__desc">
+                        Продажи и организация сервисных услуг.
+                    </div>
+                    <div class="section--team__contacts">
+                        <a href="mailto:alexander.kirpichnikov@rsplus-spb.ru"
+                            ><span class="icon-mail4"></span> alexander.kirpichnikov@rsplus-spb.ru</a
+                        >
+                        <a href="tel:+79852229540"
+                            ><span class="icon-phone"></span> +7 (985) 222-95-40</a
+                        >
+                    </div>
+                </div>
+
+                <div class="section--team__member">
+                    <img
+                        src="/images/contacts/tsvetkov.jpg"
+                        alt="Цветков Владимир Евгеньевич"
+                        class="section--team__photo"
+                    />
+                    <div class="section--team__name">
+                        Цветков Владимир Евгеньевич
+                    </div>
+                    <div class="section--team__role">Техническая поддержка</div>
+                    <div class="section--team__desc">Модернизации.</div>
+                    <div class="section--team__contacts">
+                        <a href="mailto:vladimir.tsvetkov@rsplus-spb.ru"
+                            ><span class="icon-mail4"></span> vladimir.tsvetkov@rsplus-spb.ru</a
+                        >
+                        <a href="tel:+79818600770"
+                            ><span class="icon-phone"></span> +7 (981) 860-07-70</a
+                        >
+                    </div>
+                </div>
+
+                <div class="section--team__member">
+                    <img
+                        src="/images/contacts/krylov.jpg"
+                        alt="Крылов Сергей Игоревич"
+                        class="section--team__photo"
+                    />
+                    <div class="section--team__name">
+                        Крылов Сергей Игоревич
+                    </div>
+                    <div class="section--team__role">
+                        Продажи запасных частей
+                    </div>
+                    <div class="section--team__contacts">
+                        <a href="mailto:sergey.krylov@rsplus-spb.ru"
+                            ><span class="icon-mail4"></span> sergey.krylov@rsplus-spb.ru</a
+                        >
+                        <a href="tel:+79816815741"
+                            ><span class="icon-phone"></span> +7 (981) 681-57-41</a
+                        >
+                    </div>
+                </div>
+
+                <div class="section--team__member">
+                    <img
+                        src="https://api.dicebear.com/9.x/initials/svg?seed=Вечтомов%20Филипп&backgroundColor[]&scale=70"
+                        alt="Вечтомов Филипп"
+                        class="section--team__photo"
+                    />
+                    <div class="section--team__name">Вечтомов Филипп</div>
+                    <div class="section--team__role">
+                        Руководитель сервисной службы
+                    </div>
+                    <div class="section--team__contacts">
+                        <a href="mailto:filipp.vechtomov@rsplus-spb.ru"
+                            ><span class="icon-mail4"></span> filipp.vechtomov@rsplus-spb.ru</a
+                        >
+                        <a href="tel:+79111620055"
+                            ><span class="icon-phone"></span> +7 (911) 162-00-55</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="section contacts">
+        <div class="section__content">
+                     <div class="content-cards content-cards--benefits">
+                <article class="content-card content-card--benefit">
+                    <div class="content-card__bg pale-background"></div>
+                    <div class="content-card__icon-container">
+                        <div class="content-card__circle circle">
+                            <div class="content-card__radius circle__radius">
+                                <div class="content-card__radius circle__radius circle__radius--nested ">
+                                    <div class="content-card__radius circle__radius circle__radius--nested">
+                                        <div class="content-card__icon icon-tsennost"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-card__body">
+                        <p class="content-card__text">Получите больше ценности за счет улучшения производительности, качества и безопасности</p>
+                    </div>
+                </article>
+
+                <article class="content-card content-card--benefit">
+                    <div class="content-card__bg pale-background"></div>
+                    <div class="content-card__icon-container">
+                        <div class="content-card__circle circle">
+                            <div class="content-card__radius circle__radius">
+                                <div class="content-card__radius circle__radius circle__radius--nested ">
+                                    <div class="content-card__radius circle__radius circle__radius--nested">
+                                        <div class="content-card__icon icon-deadlines"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-card__body">
+                        <p class="content-card__text">Продлите срок службы вашего оборудования и повысьте экономическую эффективность</p>
+                    </div>
+                </article>
+
+                <article class="content-card content-card--benefit">
+                    <div class="content-card__bg pale-background "></div>
+                    <div class="content-card__icon-container">
+                        <div class="content-card__circle circle">
+                            <div class="content-card__radius circle__radius">
+                                <div class="content-card__radius circle__radius circle__radius--nested ">
+                                    <div class="content-card__radius circle__radius circle__radius--nested">
+                                        <div class="content-card__icon icon-progress"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-card__body">
+                        <p class="content-card__text">Будьте впереди конкурентов, используя новейшие технологические инновации</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section> -->
 </BaseLayout>

@@ -1,0 +1,56 @@
+    .section--team__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      grid-auto-rows: 1fr;
+      gap: 7px;
+    }
+
+    .section--team__member {
+      background: var(--color-bg-alt);
+      padding: 36px;
+      transition: all .3s ease;
+    }
+
+    .section--team__member:hover {
+      background-color: #e8eef4;
+    }
+
+    .section--team__photo {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-accent);
+      background: var(--color-dark);
+    }
+
+    .section--team__name {
+      font-weight: 600;
+      font-size: var(--font-size-lg);
+      margin-top: 15px;
+    }
+
+    .section--team__role {
+      font-size: var(--font-size-base);
+      color: var(--color-accent);
+      margin-bottom: 10px;
+    }
+
+    .section--team__desc {
+      font-size: var(--font-size-sm);
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .section--team__contacts a {
+      display: block;
+      color: #222;
+      font-size: var(--font-size-base);
+      text-decoration: none;
+      margin-bottom: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .section--team__contacts a:hover {
+      color: #0a6ea8;
+    }
