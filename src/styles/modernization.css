@@ -2,16 +2,6 @@
   --color-competence: var(--color-accent-alt4);
 }
 
-.wide-content-block__title--jusy-line {
-  color: var(--color-competence);
-  font-size: 2.5rem;
-}
-
-.wide-content-block__title--jusy-line strong {
-  color: #555555;
-  font-size: 1.5em;
-}
-
 .section__title {
   margin: 24px auto;
 }

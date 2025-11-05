@@ -1,0 +1,26 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/modernization.css";
+
+const { title, subtitle, children } = Astro.props;
+---
+
+<script src="/scripts/scheme.js" defer></script>
+
+<BaseLayout title={title || (`Модернизации ${subtitle ? "— " + subtitle : ""} | РС+`)}>
+  <section class="section section--header">
+    <div class="section__content">
+      <div class="wide-content-block wide-content-block--competence">
+        <div class="wide-content-block__bg pale-background"></div>
+        <div class="wide-content-block__content">
+          <h1 class="wide-content-block__title wide-content-block__title--just-line">
+            <a class="subheadline" href="/modernization">&lt; Модернизации</a><br />
+            <strong>{subtitle}</strong>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <slot />
+</BaseLayout>
