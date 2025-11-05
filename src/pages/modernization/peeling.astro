@@ -2,7 +2,6 @@
 import ModernizationLayout from "../../layouts/ModernizationLayout.astro";
 import SchemePoint from "../../components/SchemePoint.astro";
 ---
-
 <ModernizationLayout subtitle="Линия лущения" title="Модернизации линий лущения | РС+">
     
     <section class="section section--modernization section--peeling-line">
@@ -10,6 +9,14 @@ import SchemePoint from "../../components/SchemePoint.astro";
     <div class="section--modernization__intro">
             <div class="section--modernization__scheme scheme">
                 <img src="/images/modernization/line-peeling-overview.png" alt="Линия лущения Raute">
+                <div class="scheme__points-container">
+                    <SchemePoint id="step-doser" x={15} y={83}>Модернизация ступенчатого дозатора</SchemePoint>
+                    <SchemePoint id="czu-old" x={20} y={85}>Модернизация ЦЗУ на старых линиях лущения Raute</SchemePoint>
+                    <SchemePoint id="peeling" x={20} y={74}>Суппорт, прижим, шпиндель, гидравлика, привод, отсекатель</SchemePoint>
+                    <SchemePoint id="moisture-meters" x={54} y={40}>Модернизация влагомеров</SchemePoint>
+                    <SchemePoint id="cutting-units" x={56} y={37}>Модернизация узлов рубки</SchemePoint>  
+                    <SchemePoint id="stacking-units" x={78} y={12}>Модернизация стопоукладки</SchemePoint>  
+                </div>
             </div>
         </div>
 
@@ -17,20 +24,23 @@ import SchemePoint from "../../components/SchemePoint.astro";
             <div class="section--modernization__category">
             <h3 class="section--modernization__category-title">Лущение</h3>
             <ul class="section--modernization__list">
-                <li class="section--modernization__item">Модернизация суппорта на линиях лущения Raute VE</li>
-                <li class="section--modernization__item">Модернизация прижимного устройства на линиях Raute VE</li>
-                <li class="section--modernization__item">Модернизация шпиндельной группы на линиях Raute VE и Raute SmartPeel</li>
-                <li class="section--modernization__item">Модернизация гидравлики на линиях Raute VE</li>
-                <li class="section--modernization__item">Модернизация привода суппорта на линиях Raute SmartPeel</li>
-                <li class="section--modernization__item">Модернизация отсекателя на старых линиях Raute</li>
+                <li class="section--modernization__item" onclick="activateSchemePoint('peeling')">Модернизация суппорта на линиях лущения Raute VE</li>
+                <li class="section--modernization__item" onclick="activateSchemePoint('peeling')">Модернизация прижимного устройства на линиях Raute VE</li>
+                <li class="section--modernization__item" onclick="activateSchemePoint('peeling')">Модернизация шпиндельной группы на линиях лущения Raute VE и Raute SmartPeel</li>
+                <li class="section--modernization__item" onclick="activateSchemePoint('peeling')">Модернизация гидравлики на линиях Raute VE</li>
+                <li class="section--modernization__item" onclick="activateSchemePoint('peeling')">Модернизация привода суппорта на линиях Raute SmartPeel</li>
+                <li class="section--modernization__item" onclick="activateSchemePoint('peeling')">Модернизация отсекателя на старых линиях Raute</li>
             </ul>
             </div>
             <div class="section--modernization__category">
             <h3 class="section--modernization__category-title">Рубка и стопоукладка</h3>
             <ul class="section--modernization__list">
-                <li class="section--modernization__item">Модернизация влагомеров на линиях лущения Raute</li>
-                <li class="section--modernization__item">Модернизация узлов рубки и стопоукладки</li>
-            </ul>
+                <li class="section--modernization__item" onclick="activateSchemePoint('moisture-meters')">Модернизация влагомеров на линиях лущения Raute</li>
+                <li class="section--modernization__item">
+                  <span onclick="activateSchemePoint('cutting-units')" style="cursor:pointer">Модернизация узлов рубки</span>
+                  <span> </span>
+                  <span onclick="activateSchemePoint('stacking-units')" style="cursor:pointer">и стопоукладки</span>
+                </li>
             </div>
             <div class="section--modernization__category">
             <h3 class="section--modernization__category-title">Комплексные решения</h3>
@@ -58,6 +68,9 @@ import SchemePoint from "../../components/SchemePoint.astro";
                 <h4 class="content-card__title">Современные ЦЗУ на линии VE</h4>
                 <p class="content-card__project-desc">Повышение точности центровки и скорости загрузки чураков.</p>
                 </div>
+                <div class="content-card__footer">
+                  <button type="button" class="btn content-card__btn" onclick="activateSchemePoint('czu-old')">Смотреть на схеме</button>
+                </div>
             </div>
 
             <div class="content-card content-card--details">
@@ -67,10 +80,9 @@ import SchemePoint from "../../components/SchemePoint.astro";
                 <div class="section--modernization__project-content">
                     <h4 class="content-card__title">Загрузчики чураков с пропорциональным управлением</h4>
                     <p class="content-card__project-desc">Автоматизация подачи и равномерное распределение заготовок.</p>
-                    <ul class="content-card__list">
-                        <li class="content-card__list-item">Модернизация ступенчатого дозатора</li>
-                        <li class="content-card__list-item">Модернизация ЦЗУ на старых линиях лущения Raute</li>
-                     </ul>
+                </div>
+                <div class="content-card__footer">
+                  <button type="button" class="btn content-card__btn" onclick="activateSchemePoint('czu-old')">Смотреть на схеме</button>
                 </div>
             </div>
 
@@ -82,6 +94,9 @@ import SchemePoint from "../../components/SchemePoint.astro";
                 <h4 class="content-card__title">Современные ЦЗУ на линии VKKT и VM</h4>
                 <p class="content-card__project-desc">Новое поколение систем центровки для старых моделей линий.</p>
                 </div>
+                <div class="content-card__footer">
+                  <button type="button" class="btn content-card__btn" onclick="activateSchemePoint('czu-old')">Смотреть на схеме</button>
+                </div>
             </div>
 
             <div class="content-card content-card--details">
@@ -91,6 +106,9 @@ import SchemePoint from "../../components/SchemePoint.astro";
                 <div class="section--modernization__project-content">
                 <h4 class="content-card__title">Новый суппорт в сборе на линии SP, VE, VKKT и VM</h4>
                 <p class="content-card__project-desc">Повышенная жесткость и точность, унификация конструкции.</p>
+                </div>
+                <div class="content-card__footer">
+                  <button type="button" class="btn content-card__btn" onclick="activateSchemePoint('peeling')">Смотреть на схеме</button>
                 </div>
             </div>
 
@@ -102,6 +120,9 @@ import SchemePoint from "../../components/SchemePoint.astro";
                 <h4 class="content-card__title">Прижимные устройства с позиционированием</h4>
                 <p class="content-card__project-desc">Точная настройка прижимного усилия и стабильность параметров.</p>
                 </div>
+                <div class="content-card__footer">
+                  <button type="button" class="btn content-card__btn" onclick="activateSchemePoint('peeling')">Смотреть на схеме</button>
+                </div>
             </div>
 
             <div class="content-card content-card--details">
@@ -111,6 +132,9 @@ import SchemePoint from "../../components/SchemePoint.astro";
                 <div class="section--modernization__project-content">
                 <h4 class="content-card__title">Современная гидравлическая система</h4>
                 <p class="content-card__project-desc">Энергоэффективность и стабильное давление при лущении.</p>
+                </div>
+                <div class="content-card__footer">
+                  <button type="button" class="btn content-card__btn" onclick="activateSchemePoint('peeling')">Смотреть на схеме</button>
                 </div>
             </div>
             </div>

@@ -2,6 +2,19 @@
   --color-competence: var(--color-accent-alt4);
 }
 
+.section--hero
+.wide-content-block {
+  margin-bottom: -71px;
+}
+
+.section--benefits {
+  background-color: var(--color-dark);
+}
+
+.content-cards--benefits {
+  margin-top: 30px;
+}
+
 .section__title {
   margin: 24px auto;
 }
@@ -51,11 +64,15 @@
   line-height: var(--line-height-base);
 }
 
-.section--modernization__item[onclick^="activateSchemePoint"] {
+.section--modernization__item[onclick^="activateSchemePoint"],
+span[onclick^="activateSchemePoint"] {
   cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--color-competence);
 }
 
-.section--modernization__item[onclick^="activateSchemePoint"]:hover {
+.section--modernization__item[onclick^="activateSchemePoint"]:hover,
+span[onclick^="activateSchemePoint"]:hover {
   text-decoration: underline;
   color: var(--color-accent-alt2);
 }
@@ -73,12 +90,67 @@
   color: var(--color-accent-alt4);
 }
 
-.content-cards--details {
-  margin: 36px 0 24px;
+
+
+
+
+.project__description {
+    margin-bottom: 24px;
 }
 
-.content-card--details {
-  border-bottom-color: #406481;
+.project__title {
+    background-color: var(--color-competence);
+    color: var(--color-text-negative);
+    padding: 12px 24px;
+    margin: 24px -12px 12px;
+}
+
+
+.project__media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.project__images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.project__images img {
+    max-width: 300px;
+    border-bottom: 6px solid var(--color-competence);
+}
+
+.project__diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-alt);
+  border-bottom: 6px solid var(--color-competence);
+}
+
+.project__diagram img {
+    max-width: 300px;
+}
+
+.project__cards {
+  margin-top: 48px;
+}
+
+.project__cards
+.content-card {
+  padding-bottom: 0;
+  border-bottom-color: var(--color-competence)
+}
+
+.content-card
+.content-card__title {
+  margin: 12px 0;
+  color: var(--color-text);
 }
 
 @media (max-width: 768px) {
@@ -90,5 +162,27 @@
   .section--modernization__scheme {
     margin: -24px -24px 0;
   }
+
+  .project__images img,
+  .project__diagram img{
+    max-width: 100%;
+}
   
+}
+
+@media (min-width: 768px) {
+  .project {
+      border: 1px solid var(--color-border);
+      padding: 48px 24px;
+      margin-bottom: 36px;
+  }
+  .project__cards {
+    margin: 40px -12px -57px;
+  }
+  .project__title {
+      background-color: var(--color-competence);
+      color: var(--color-text-negative);
+      padding: 12px 24px;
+      margin: -36px -12px 12px;
+  }
 }

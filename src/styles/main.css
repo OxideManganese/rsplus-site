@@ -130,6 +130,10 @@
   color: var(--color-accent);
 }
 
+.wide-content-block__subtitle i {
+    color: var(--color-gray);
+}
+
 .wide-content-block__title--just-line {
   color: var(--color-competence);
   font-size: 2rem;
