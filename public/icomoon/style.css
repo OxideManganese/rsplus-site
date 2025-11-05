@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'rsplus';
-  src:  url('fonts/rsplus.eot?8dgykq');
-  src:  url('fonts/rsplus.eot?8dgykq#iefix') format('embedded-opentype'),
-    url('fonts/rsplus.ttf?8dgykq') format('truetype'),
-    url('fonts/rsplus.woff?8dgykq') format('woff'),
-    url('fonts/rsplus.svg?8dgykq#rsplus') format('svg');
+  src:  url('fonts/rsplus.eot?3dmc1p');
+  src:  url('fonts/rsplus.eot?3dmc1p#iefix') format('embedded-opentype'),
+    url('fonts/rsplus.ttf?3dmc1p') format('truetype'),
+    url('fonts/rsplus.woff?3dmc1p') format('woff'),
+    url('fonts/rsplus.svg?3dmc1p#rsplus') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-keyboard_arrow_left:before {
+  content: "\e90c";
+}
 .icon-deadlines:before {
   content: "\e908";
 }
@@ -61,14 +64,62 @@
 .icon-telegram:before {
   content: "\e900";
 }
-.icon-phone:before {
-  content: "\e942";
+.icon-undo2:before {
+  content: "\e967";
 }
 .icon-bubble2:before {
   content: "\e96e";
 }
 .icon-cogs:before {
   content: "\e995";
+}
+.icon-arrow-up:before {
+  content: "\ea32";
+}
+.icon-arrow-right:before {
+  content: "\ea34";
+}
+.icon-arrow-down:before {
+  content: "\ea36";
+}
+.icon-arrow-left:before {
+  content: "\ea38";
+}
+.icon-circle-left:before {
+  content: "\ea44";
+}
+.icon-mail2:before {
+  content: "\ea84";
+}
+.icon-mail4:before {
+  content: "\ea86";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-undo2:before {
+  content: "\e967";
+}
+.icon-bubble2:before {
+  content: "\e96e";
+}
+.icon-cogs:before {
+  content: "\e995";
+}
+.icon-arrow-up:before {
+  content: "\ea32";
+}
+.icon-arrow-right:before {
+  content: "\ea34";
+}
+.icon-arrow-down:before {
+  content: "\ea36";
+}
+.icon-arrow-left:before {
+  content: "\ea38";
+}
+.icon-circle-left:before {
+  content: "\ea44";
 }
 .icon-mail2:before {
   content: "\ea84";

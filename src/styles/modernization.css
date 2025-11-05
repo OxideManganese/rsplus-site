@@ -92,8 +92,6 @@ span[onclick^="activateSchemePoint"]:hover {
 
 
 
-
-
 .project__description {
     margin-bottom: 24px;
 }
@@ -104,7 +102,6 @@ span[onclick^="activateSchemePoint"]:hover {
     padding: 12px 24px;
     margin: 24px -12px 12px;
 }
-
 
 .project__media {
     display: flex;
@@ -138,7 +135,7 @@ span[onclick^="activateSchemePoint"]:hover {
 }
 
 .project__cards {
-  margin-top: 48px;
+  margin-top: 12px;
 }
 
 .project__cards
@@ -174,10 +171,10 @@ span[onclick^="activateSchemePoint"]:hover {
   .project {
       border: 1px solid var(--color-border);
       padding: 48px 24px;
-      margin-bottom: 36px;
+      margin-bottom: 24px;
   }
   .project__cards {
-    margin: 40px -12px -57px;
+    margin: 12px -12px -57px;
   }
   .project__title {
       background-color: var(--color-competence);
