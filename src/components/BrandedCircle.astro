@@ -1,0 +1,21 @@
+---
+interface Props {
+  iconId?: string;
+  className?: string;
+}
+
+const { iconId, className } = Astro.props;
+---
+
+<div class={`${className ?? ""} circle`}>
+  <div class="circle__radius">
+    <div class="circle__radius circle__radius--nested">
+      <div class="circle__radius circle__radius--nested">
+        {iconId && (
+          <div class={`circle__icon icon-${iconId}`}></div>
+        )}
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>

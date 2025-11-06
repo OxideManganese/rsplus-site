@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BrandedCircle from "../components/BrandedCircle.astro";
 import "../styles/modernization.css";
 ---
 
@@ -26,15 +27,7 @@ import "../styles/modernization.css";
                 <article class="content-card content-card--benefit">
                     <div class="content-card__bg pale-background"></div>
                     <div class="content-card__icon-container">
-                        <div class="content-card__circle circle">
-                            <div class="content-card__radius circle__radius">
-                                <div class="content-card__radius circle__radius circle__radius--nested ">
-                                    <div class="content-card__radius circle__radius circle__radius--nested">
-                                        <div class="content-card__icon icon-tsennost"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <BrandedCircle className="content-card__circle" iconId="tsennost"></BrandedCircle>
                     </div>
                     <div class="content-card__body">
                         <p class="content-card__text">Получите больше ценности за счет улучшения производительности, качества и безопасности</p>
@@ -44,15 +37,7 @@ import "../styles/modernization.css";
                 <article class="content-card content-card--benefit">
                     <div class="content-card__bg pale-background"></div>
                     <div class="content-card__icon-container">
-                        <div class="content-card__circle circle">
-                            <div class="content-card__radius circle__radius">
-                                <div class="content-card__radius circle__radius circle__radius--nested ">
-                                    <div class="content-card__radius circle__radius circle__radius--nested">
-                                        <div class="content-card__icon icon-deadlines"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <BrandedCircle className="content-card__circle" iconId="deadlines"></BrandedCircle>
                     </div>
                     <div class="content-card__body">
                         <p class="content-card__text">Продлите срок службы вашего оборудования и повысьте экономическую эффективность</p>
@@ -62,15 +47,7 @@ import "../styles/modernization.css";
                 <article class="content-card content-card--benefit">
                     <div class="content-card__bg pale-background "></div>
                     <div class="content-card__icon-container">
-                        <div class="content-card__circle circle">
-                            <div class="content-card__radius circle__radius">
-                                <div class="content-card__radius circle__radius circle__radius--nested ">
-                                    <div class="content-card__radius circle__radius circle__radius--nested">
-                                        <div class="content-card__icon icon-progress"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <BrandedCircle className="content-card__circle" iconId="progress"></BrandedCircle>
                     </div>
                     <div class="content-card__body">
                         <p class="content-card__text">Будьте впереди конкурентов, используя новейшие технологические инновации</p>

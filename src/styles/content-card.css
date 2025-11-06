@@ -53,6 +53,7 @@
 }
 
 .content-card--benefit {
+  --card-color: var(--color-competence);
   flex-direction: row;
   gap: 20px;
   border-bottom-color: var(--color-competence);
@@ -230,49 +231,20 @@
   }
 }
 
-.content-card__icon {
-  font-size: 3.5em;
-  margin-top: -30px;
-  color: var(--card-color, --color-accent);
-  font-weight: 550;
-  transition: all .5s ease;
+
+.content-card__circle {
+  --circle-color: var(--card-color) !important;
+  --circle-radius: 130px;
+  --circle--shift-down: 30px;
 }
-
-.content-cards--benefits
-.content-card__icon {
-  font-size: 3em;
-  margin: 0;
-  color: var(--color-competence);
-  font-weight: 600;
-  margin-right: -6px;
-}
-
-.is-not-scrolled
-.content-cards--competencies
-.content-card__icon {
-  font-size: 2em;
-  margin-top: 0;
-  font-weight: 1000;
-}
-
-.content-card__radius {
-  border-color: var(--card-color) !important;
-  --radius: 130px;
-  transition: all .5s ease;
-}
-
-
-.is-not-scrolled
-.content-cards--competencies
-.content-card__radius {
-  --radius: 75px;
-}
-
 
 .content-card--benefit
-.content-card__radius {
-  border-color: var(--color-competence) !important;
-  --radius: 100px;
+.content-card__circle {
+  --circle-radius: 100px;
+  --circle--shift-down: 0;
+  --circle--shift--right: 8px;
+  font-size: 3em;
+  font-weight: 700;
 }
 
 .content-card__bg {

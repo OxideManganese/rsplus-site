@@ -1,5 +1,6 @@
 ---
 // competenciesCard.astro
+import BrandedCircle from "./BrandedCircle.astro";
 const { title, subtitle, colorIndex = 1, buttonLabel, buttonLink, icon } = Astro.props;
 ---
 
@@ -7,15 +8,7 @@ const { title, subtitle, colorIndex = 1, buttonLabel, buttonLink, icon } = Astro
   <div class="content-card__bg pale-background "></div>
   <div class="content-card__body">
     <div class="content-card__icon-container">
-      <div class="content-card__circle circle">
-        <div class="content-card__radius circle__radius">
-          <div class="content-card__radius circle__radius circle__radius--nested " >
-            <div class="content-card__radius circle__radius circle__radius--nested">
-              <div class={`content-card__icon icon-${icon}`}></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BrandedCircle className="content-card__circle" iconId={icon}></BrandedCircle>
   </div>
     {title && <h3 class="content-card__title">{title}</h3>}
     {subtitle && <h4 class="content-card__subtitle">{subtitle}</h4>}

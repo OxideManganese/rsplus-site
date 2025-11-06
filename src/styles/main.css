@@ -274,23 +274,35 @@ p .btn {
 
 /* Графическме элементы */
 .circle {
+  --circle-color: var(--color-accent);
+  --circle-radius: 130px;
   position: relative;
   width: fit-content;
+  color: var(--circle-color);
+  font-size: 3.5em;
 }
 
 .circle__radius {
-  width: var(--radius, 130px);
-  height: var(--radius, 130px);;
-  border-radius: 100%;
-  border: 2px solid var(--color-accent);
+  width: var(--circle-radius);
+  height: var(--circle-radius);
   display: inline-grid;
   align-items: center;
   justify-items: center;
+  transition: all .5s ease;
+  border-radius: 100%;
+  border: 2px solid var(--circle-color);
 }
 
 .circle__radius--nested {
   width: calc(100% - 8px);
   height: calc(100% - 8px);
+}
+
+.circle__icon {
+    margin-top: calc(0px - var(--circle--shift-down, 0));
+    margin-right: calc(0px - var(--circle--shift--right, 0));
+    transition: all .5s ease;
+    font-weight: 570;
 }
 
 .pale-background {
