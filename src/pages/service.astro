@@ -1,12 +1,422 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BrandedCircle from "../components/BrandedCircle.astro";
+import "../styles/service.css";
+const mechanics = Array.from({ length: 5 });
+const automatics = Array.from({ length: 5 });
+const mecano = Array.from({ length: 2 });
 ---
 
 <BaseLayout title="Сервис | РС+">
-    <section class="section ">
+    <section class="section section--hero">
         <div class="section__content">
-            <h1 class="section__title">Сервис</h1>
-            <p>Страница в процессе написания</p>
+            <div class="wide-content-block wide-content-block--competence">
+                <div class="pale-background wide-content-block__bg"></div>
+                <div class="wide-content-block__content">
+                    <h1 class="wide-content-block__title">
+                        <strong>Сервис</strong>
+                    </h1>
+                    <p class="subheadline wide-content-block__subtitle">
+                       Техническое обслуживание и ремонт с программами РС+<br>
+                    </p>
+                    <p class="subheadline wide-content-block__subtitle">  
+                        <i>Сервисные услуги по вашим потребностям</i>
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
+
+        <section class="section section--benefits">
+        <div class="section__content">
+            <div class="content-cards content-cards--benefits content-cards--competencies">
+                <article class="content-card content-card--benefit content-card--competencies">
+                    <div class="content-card__bg pale-background"></div>
+                    <div class="content-card__icon-container">
+                        <BrandedCircle className="content-card__circle" iconId="parts"></BrandedCircle>
+                    </div>
+                    <div class="content-card__body">
+                        <p class="content-card__text">
+                            Запасные части и комплектующие
+                        </p>
+                    </div>
+                </article>
+
+                <article class="content-card content-card--benefit content-card--competencies">
+                    <div class="content-card__bg pale-background"></div>
+                    <div class="content-card__icon-container">
+                        <BrandedCircle className="content-card__circle" iconId="field-service"></BrandedCircle>
+                    </div>
+                    <div class="content-card__body">
+                        <p class="content-card__text">
+                            Выезд специалистов для диагностики и ремонта оборудования
+                        </p>
+                    </div>
+                </article>
+
+                <article class="content-card content-card--benefit content-card--competencies">
+                    <div class="content-card__bg pale-background "></div>
+                    <div class="content-card__icon-container">
+                        <BrandedCircle className="content-card__circle" iconId="target"></BrandedCircle>
+                    </div>
+                    <div class="content-card__body">
+                        <p class="content-card__text">
+                            Сервис на результат — комплексные программы обслуживания
+                        </p>
+                    </div>
+                </article>
+
+                <article class="content-card content-card--benefit content-card--competencies">
+                    <div class="content-card__bg pale-background"></div>
+                    <div class="content-card__icon-container">
+                        <BrandedCircle className="content-card__circle" iconId="training"></BrandedCircle>
+                    </div>
+                    <div class="content-card__body">
+                        <p class="content-card__text">
+                            Оптимизация бизнес-процессов и обучение
+                        </p>
+                    </div>
+                </article>
+
+                <article class="content-card content-card--benefit content-card--competencies">
+                    <div class="content-card__bg pale-background"></div>
+                    <div class="content-card__icon-container">
+                        <BrandedCircle className="content-card__circle" iconId="modernization"></BrandedCircle>
+                    </div>
+                    <div class="content-card__body">
+                        <p class="content-card__text">
+                            Проекты улучшений и модернизации
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--promo" role="region" aria-label="Защитите инвестиции">
+        <div class="section__content">
+            <div class="promo__bg" aria-hidden="true"></div>
+            <div class="promo__overlay">
+                <h2 class="promo__title">Защитите эффективную производительность вашего предприятия </h2>
+                <p class="promo__text">
+                    Чтобы оставаться конкурентоспособными, бизнес‑подразделения производителей фанеры и LVL должны снижать операционные расходы и риски, поддерживая производительность и техническое обслуживание на постоянно высоком уровне. Соглашения об обслуживании РС+ помогут вам защитить свои инвестиции и увеличить производительность.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+        <section class="section section--maintenance">
+        <div class="section__content">
+            <p class="section__pretitle">Техническое обслуживание и ремонт станков по производству фанеры</p>
+            <h2 class="section__title">Для заводов с автоматизированными системами ТОиР</h2> 
+            <div class="content-cards">
+                <div class="content-card">
+                    <div class="content-card__body">
+                        <h3 class="content-card__title">Преимущества работы с нами</h3>
+                        <ul class="content-card__list">
+                            <li>Тщательный осмотр станков по производству фанеры для выявления потенциальных проблем и оптимизации производительности</li>
+                            <li>Разработка рекомендаций для улучшения автоматизации ТОиР и увеличения срока службы оборудования</li>
+                            <li>Регулярное обслуживание для предотвращения поломок и минимизации простоя</li>
+                            <li>Приоритетные услуги ремонта</li>
+                            <li>Оперативный ремонт станков по производству фанеры в случае поломки, с учетом TPM-приоритетов</li>
+                            <li>Минимизация простоя и восстановление производительности в кратчайшие сроки</li>
+                            <li>Обучение и поддержка персонала для самостоятельного обслуживания и ремонта оборудования</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div class="content-card__body">
+                        <h3 class="content-card__title">Наши достижения после ухода RAUTE</h3>
+                        <ul class="content-card__list">
+                            <li>Сохранили сервисную команду и бесценный опыт в обслуживании оборудования</li>
+                            <li>Смонтировали и запустили без финской поддержки два крупных фанерных завода и множество мелких проектов</li>
+                            <li>Наладили производство запасных частей по оригинальным чертежам</li>
+                            <li>Расширили зоны сервисного обслуживания</li>
+                            <li>Сохранили сервисные контракты с нашими партнерами</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="section section--service">
+        <div class="section__content">
+            <p class="section__pretitle">Техническое обслуживание и ремонт станков по производству фанеры</p><h2 class="section__title">Для заводов с автоматизированными системами ТОиР</h2> 
+            <div class="content-cards">
+            <div class="content-card">
+                <div class="content-card__body">
+                <h3 class="content-card__title">Преимущества работы с нами</h3>
+                <ul class="content-card__list">
+                    <li>Тщательный осмотр станков и выявление проблем</li>
+                    <li>Рекомендации по автоматизации ТОиР</li>
+                    <li>Регулярное обслуживание и предотвращение простоев</li>
+                    <li>Приоритетные услуги ремонта</li>
+                    <li>Обучение персонала</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="content-card__body">
+                <h3 class="content-card__title">Наши достижения после ухода RAUTE</h3>
+                <ul class="content-card__list">
+                    <li>Сохранили команду и опыт</li>
+                    <li>Запустили два крупных завода без внешней поддержки</li>
+                    <li>Наладили производство запчастей</li>
+                    <li>Расширили зоны обслуживания</li>
+                    <li>Сохранили контракты с партнёрами</li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="section section--process" aria-label="Этапы планового сервисного визита">
+        <div class="section__content">
+        <h2 class="section__title">Этапы планового сервисного визита</h2>
+            <div class="content-cards content-cards--process">
+
+                <article class="content-card content-card--process content-card--accent-alt1">
+                <div class="content-card__bg pale-background"></div>
+                <div class="content-card__body">
+                    <div class="content-card__progresser">
+                    <div class="content-card__icon-container">
+                        <BrandedCircle className="content-card__circle" iconId="target"></BrandedCircle>
+                    </div>
+                    <div class="conteny-card__title-container">
+                        <h3 class="content-card__title"><i>Шаг 1</i></h3>
+                        <h4 class="content-card__subtitle">планирование визита</h4>
+                    </div>
+                    </div>
+                    <p class="content-card__meta">За месяц до визита</p>
+                    <ul class="content-card__list">
+                    <li>Сбор вводных данных</li>
+                    <li>Заполняется опросник от комбината по оцифрованным проблемам/задачам визита</li>
+                    <li>Инженеры РС+ изучают опросник</li>
+                    <li>Производится обмен дополнительной информацией</li>
+                    </ul>
+                </div>
+                <div class="content-card__footer">
+                    <div class="content-card--process__number">01</div>
+                </div>
+                </article>
+
+                <article class="content-card content-card--process content-card--accent-alt2">
+                <div class="content-card__bg pale-background"></div>
+                <div class="content-card__body">
+                    <div class="content-card__progresser">
+                    <div class="content-card__icon-container">
+                        <BrandedCircle className="content-card__circle" iconId="operator"></BrandedCircle>
+                    </div>
+                    <div class="conteny-card__title-container">
+                        <h3 class="content-card__title"><i>Шаг 2</i></h3>
+                        <h4 class="content-card__subtitle">подготовка к визиту</h4>
+                    </div>
+                    </div>
+                    <p class="content-card__meta">В течение недели</p>
+                    <ul class="content-card__list">
+                    <li>Проводится ВКС со всеми заинтересованными сторонами</li>
+                    <li>Планируется график выхода на оборудование</li>
+                    <li>Определяются дополнительные ресурсы и информация</li>
+                    <li>Согласовывается методология измерений и ожидаемый результат</li>
+                    </ul>
+                </div>
+                <div class="content-card__footer">
+                    <div class="content-card--process__number">02</div>
+                </div>
+                </article>
+
+                <article class="content-card content-card--process content-card--accent-alt3">
+                <div class="content-card__bg pale-background"></div>
+                <div class="content-card__body">
+                    <div class="content-card__progresser">
+                    <div class="content-card__icon-container">
+                        <BrandedCircle className="content-card__circle" iconId="tehnick"></BrandedCircle>
+                    </div>
+                    <div class="conteny-card__title-container">
+                        <h3 class="content-card__title"><i>Шаг 3</i></h3>
+                        <h4 class="content-card__subtitle">проведение визита</h4>
+                    </div>
+                    </div>
+                    <p class="content-card__meta">Согласно графика</p>
+                    <ul class="content-card__list">
+                    <li>Выполняются работы на основании заранее оговоренного плана действий</li>
+                    <li>Проводится заключительное ВКС</li>
+                    <li>Оцениваются результаты визита</li>
+                    <li>Определяются мероприятия для отслеживания</li>
+                    </ul>
+                </div>
+                <div class="content-card__footer">
+                    <div class="content-card--process__number">03</div>
+                </div>
+                </article>
+
+                <article class="content-card content-card--process content-card--accent-alt4">
+                <div class="content-card__bg pale-background"></div>
+                <div class="content-card__body">
+                    <div class="content-card__progresser">
+                    <div class="content-card__icon-container">
+                        <BrandedCircle className="content-card__circle" iconId="monitoring"></BrandedCircle>
+                    </div>
+                    <div class="conteny-card__title-container">
+                        <h3 class="content-card__title"><i>Шаг 4</i></h3>
+                        <h4 class="content-card__subtitle">отслеживание</h4>
+                    </div>
+                    </div>
+                    <p class="content-card__meta">Через две недели после визита</p>
+                    <ul class="content-card__list">
+                    <li>Ведется отслеживание выполнения мероприятий</li>
+                    <li>Проводится оценка результатов по выполненным мероприятиям</li>
+                    </ul>
+                </div>
+                <div class="content-card__footer">
+                    <div class="content-card--process__number">04</div>
+                </div>
+                </article>
+
+                <article class="content-card content-card--process content-card--accent-alt5">
+                <div class="content-card__bg pale-background"></div>
+                <div class="content-card__body">
+                    <div class="content-card__progresser">
+                    <div class="content-card__icon-container">
+                        <BrandedCircle className="content-card__circle" iconId="completed"></BrandedCircle>
+                    </div>
+                    <div class="conteny-card__title-container">
+                        <h4 class="content-card__subtitle">Результат</h4>
+                    </div>
+                    </div>
+                    <p class="content-card__meta">По факту выполнения запланированных мероприятий</p>
+                    <ul class="content-card__list">
+                    <li>Фиксируются достигнутые результаты</li>
+                    <li>Сохранение исторических данных по мероприятиям</li>
+                    </ul>
+                </div>
+                <div class="content-card__footer">
+                    <div class="content-card--process__number">05</div>
+                </div>
+                </article>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- <section class="section section--specialists">
+    <div class="section__content layout">
+
+        <div class="info">
+
+        <div class="info__card">
+            <h3 class="info__title">Квалифицированный персонал</h3>
+            <p class="info__text">
+            Квалифицированный персонал, вовлечённый в техническое обслуживание сложного оборудования – это репутация компании, связанная как с ответственностью перед третьими лицами за надёжность эксплуатируемого оборудования, так и за безопасность людей, его эксплуатирующих.
+            </p>
+        </div>
+
+        <div class="info__card">
+            <h3 class="info__title">Профессиональные навыки</h3>
+            <p class="info__text">
+            Специалисты обладают глубокими компетенциями в сервисе и техническом обслуживании сложного оборудования, обеспечивая безопасность и бесперебойность эксплуатации.
+            </p>
+        </div>
+
+        <div class="info__card">
+            <h3 class="info__title">Репутация и надёжность</h3>
+            <p class="info__text">
+            Ответственность перед клиентами и третьими лицами — основа нашей работы. Мы гарантируем высокое качество сервиса и соблюдение требований по безопасности.
+            </p>
+        </div>
+
+        </div>
+        <div class="specialists">
+
+        <div class="specialists__office">
+            <div class="specialists__office-card">
+            <h3 class="specialists__office-title">Офис ООО РС+</h3>
+            <p class="specialists__office-location">Санкт-Петербург</p>
+            <p class="specialists__office-note">(офис и склад запасных частей)</p>
+            </div>
+            <div class="specialists__connector"></div>
+        </div>
+
+        <div class="specialists__diagram">
+            <div class="specialists__diagram-office-image">IMG</div>
+
+            <div class="specialists__diagram-main">
+            <h3 class="specialists__diagram-title">Технические специалисты РС+ — это репутация компании</h3>
+
+            <div class="specialists__groups specialists__groups--row">
+
+                <div class="specialists-group specialists-group--mechanics specialists-group--row">
+                <div class="specialists-group__count">5</div>
+                <div class="specialists-group__info">
+                    <p class="specialists-group__title">Механики</p>
+                    <div class="specialists-group__icons">
+                    {mechanics.map(() => `<div class='specialists-icon'>🛠️</div>`).join("")}
+                    </div>
+                </div>
+                </div>
+
+                <div class="specialists-group specialists-group--automatics specialists-group--row">
+                <div class="specialists-group__count">4+1</div>
+                <div class="specialists-group__info">
+                    <p class="specialists-group__title">Автоматчики</p>
+                    <div class="specialists-group__icons">
+                    {automatics.map(() => `<div class='specialists-icon'>⚙️</div>`).join("")}
+                    <div class="specialists-icon specialists-icon--future">⚙️</div>
+                    </div>
+                    <p class="specialists-group__note">+1 в 1 кв. 2025</p>
+                </div>
+                </div>
+
+                <div class="specialists-group specialists-group--mecano specialists-group--row">
+                <div class="specialists-group__count">1+1</div>
+                <div class="specialists-group__info">
+                    <p class="specialists-group__title">Mecano</p>
+                    <div class="specialists-group__icons">
+                    {mecano.map(() => `<div class='specialists-icon'>🔧</div>`).join("")}
+                    <div class="specialists-icon specialists-icon--future">🔧</div>
+                    </div>
+                    <p class="specialists-group__note">+1 в 1 кв. 2025</p>
+                </div>
+                </div>
+
+            </div>
+            </div>
+
+                <div class="specialists-group specialists-group--automatics">
+                <p class="specialists-group__title">Автоматчики (4 +1)</p>
+                <div class="specialists-group__icons">
+                    {automatics.map(() => `<div class='specialists-icon'>⚙️</div>`).join("")}
+                    <div class="specialists-icon specialists-icon--future">⚙️</div>
+                </div>
+                <p class="specialists-group__note">+1 в 1 кв. 2025</p>
+                </div>
+
+                <div class="specialists-group specialists-group--mecano">
+                <p class="specialists-group__title">Mecano (1 +1)</p>
+                <div class="specialists-group__icons">
+                    {mecano.map(() => `<div class='specialists-icon'>🔧</div>`).join("")}
+                    <div class="specialists-icon specialists-icon--future">🔧</div>
+                </div>
+                <p class="specialists-group__note">+1 в 1 кв. 2025</p>
+                </div>
+
+            </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</section> -->
+
+    
 </BaseLayout>

@@ -36,6 +36,10 @@
     padding: 24px var(--container-padding);
 }
 
+.section__content:has(.section__title) {
+    padding: 48px var(--container-padding);
+}
+
 .logo {
     font-family: var(--font-secondary);
     font-size: var(--font-size-xl);
@@ -235,7 +239,7 @@
     display: inline-block;
     width: 100%;
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 48px;
 }
 
 .section__title::after {
@@ -245,6 +249,14 @@
     width: 90px;
     height: 3px;
     background-color: var(--color-accent-alt1);
+}
+
+.section__pretitle {
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-gray);
+  margin-bottom: 6px;
+  font-weight: 600;
 }
 
 /* Кнопки */
@@ -280,6 +292,7 @@ p .btn {
   width: fit-content;
   color: var(--circle-color);
   font-size: 3.5em;
+  font-weight: 600;
 }
 
 .circle__radius {
@@ -300,7 +313,7 @@ p .btn {
 
 .circle__icon {
     margin-top: calc(0px - var(--circle--shift-down, 0));
-    margin-right: calc(0px - var(--circle--shift--right, 0));
+    margin-right: calc(0px - var(--circle--shift-right, 0));
     transition: all .5s ease;
     font-weight: 570;
 }

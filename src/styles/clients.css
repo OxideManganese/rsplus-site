@@ -1,13 +1,9 @@
-.section--clients
-.section__content {
-    padding: 72px var(--container-padding);
-}
-
 .clients-logos-wrapper {
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
     width: 100%;
+    margin-bottom: 24px;
 
 }
 

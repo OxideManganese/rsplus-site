@@ -1,0 +1,164 @@
+---
+const mechanics = Array.from({ length: 5 });
+const automatics = Array.from({ length: 5 });
+const mecano = Array.from({ length: 2 });
+---
+
+<section class="specialists-section">
+  <div class="intro">
+    <h2>Наши технические специалисты</h2>
+    <p>
+      Квалифицированный персонал, вовлечённый в техническое обслуживание сложного оборудования – это репутация компании, основанная на ответственности за надёжность и безопасность эксплуатации.
+    </p>
+  </div>
+
+  <div class="office-block">
+    <div class="office-card">
+      <h3>Офис ООО РС+</h3>
+      <p>Санкт-Петербург</p>
+      <p class="small">(офис и склад запасных частей)</p>
+    </div>
+    <div class="arrow"></div>
+  </div>
+
+  <div class="diagram">
+    <div class="office-image">IMG</div>
+
+    <div class="main-card">
+      <h3>Технические специалисты РС+ — это репутация компании</h3>
+
+      <div class="professions">
+        <div class="profession">
+          <p class="title">Механики (5)</p>
+          <div class="icons">
+            {mechanics.map(() => `<div class='icon'>🛠️</div>`).join("")}
+          </div>
+        </div>
+
+        <div class="profession">
+          <p class="title">Автоматчики (4 +1)</p>
+          <div class="icons">
+            {automatics.map(() => `<div class='icon'>⚙️</div>`).join("")}
+          </div>
+          <p class="small">+1 в 1 кв. 2025</p>
+        </div>
+
+        <div class="profession">
+          <p class="title">Mecano (1 +1)</p>
+          <div class="icons">
+            {mecano.map(() => `<div class='icon'>🔧</div>`).join("")}
+          </div>
+          <p class="small">+1 в 1 кв. 2025</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .specialists-section {
+    width: 100%;
+    padding: 4rem 1rem;
+    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .intro {
+    max-width: 700px;
+    text-align: center;
+  }
+
+  h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+  .intro p { color: #64748b; font-size: 1.1rem; }
+
+  .office-block { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .office-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    width: 280px;
+    text-align: center;
+  }
+  .office-card .small { font-size: 0.85rem; color: #64748b; }
+
+  .arrow {
+    width: 4px;
+    height: 40px;
+    background: var(--color-accent-alt1, #cbd5e1);
+    border-radius: 2px;
+  }
+
+  .diagram {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .office-image {
+    width: 160px;
+    height: 160px;
+    background: #e2e8f0;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -50px;
+    z-index: 2;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .main-card {
+    background: white;
+    padding: 3rem 2rem 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+    text-align: center;
+    width: 100%;
+  }
+
+  .professions {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  @media(min-width: 768px) {
+    .professions { flex-direction: row; justify-content: center; }
+  }
+
+  .profession {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .profession .title { font-weight: 600; }
+  .profession .small { font-size: 0.85rem; color: #64748b; }
+
+  .icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+  }
+
+  .icon {
+    width: 42px;
+    height: 42px;
+    background: var(--color-accent-alt2, #f1f5f9);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+</style>

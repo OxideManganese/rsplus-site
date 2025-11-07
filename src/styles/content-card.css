@@ -1,24 +1,14 @@
 .content-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
   gap: 7px;
 }
 
-.content-cards--competencies {
-    grid-auto-rows: 1fr;
-}
 
 .content-cards--benefits,
 .content-cards--arrows {
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 1fr;
-}
-
-@media (max-width: 900px) {
-    .content-cards--benefits,
-    .content-cards--arrows {
-        grid-template-columns: 1fr;
-    }
 }
 
 .content-cards--details {
@@ -28,6 +18,10 @@
   column-gap: 7px;
   justify-content: center;
   position: relative;
+}
+
+.content-cards--process {
+  gap: 24px;
 }
 
 /* Базовый стиль карточки */
@@ -41,7 +35,7 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.content-card--competencies {
+.content-card[class*="--accent-"] {
   border-color: var(--card-color);
 }
 
@@ -94,7 +88,7 @@
   color: var(--color-dark);
 }
 
-.content-cards--competencies
+.content-card[class*="--accent-"]
 .content-card__title {
   font-size: var(--font-size-sm);
   filter: brightness(.6);
@@ -122,6 +116,63 @@
   font-weight: 500;
 }
 
+.conteny-card__title-container > * {
+  margin: 0;
+}
+
+.content-card__progresser {
+  --progreser-color: color-mix( in oklab, var(--card-color), #e4e3e7 80% );
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  gap: 12px;
+  align-content: center;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: -30px;
+  background-color: var(--progreser-color);
+  padding: 6px;
+  padding-right: 0;
+
+}
+
+.content-card__progresser .content-card__icon-container {
+  align-items: center;
+  max-height: 65px;
+  max-width: 75px;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.content-card__progresser::after {
+  content: "";
+  box-sizing: content-box;
+  position: relative;
+  margin: -10px -59px -10px 0;
+  border-top: 39px solid transparent;
+  border-bottom: 39px solid transparent;
+  border-left: 60px solid var(--progreser-color);
+  z-index: 2;
+}
+
+.content-card__progresser .content-card__circle {
+  --circle-radius: 100px;
+  --circle--shift-down: 0;
+  --circle--shift-right: 15px;
+  font-size: 3em;
+}
+
+.content-card--process__number {
+  text-align: center;
+  font-weight: 900;
+  font-size: 15rem;
+  margin: -6rem -24px -24px;
+  overflow: hidden;
+  height: 10rem;
+  color: color-mix( in oklab, var(--card-color), #9e98a311 90% );
+  pointer-events: none;
+}
+
+
 
 .content-card__project-desc {
   font-size: var(--font-size-sm);
@@ -130,6 +181,16 @@
 
 .content-card__list {
   padding-left: 18px;
+}
+
+.content-card__meta {
+  margin-top: 1em;
+  color: var(--card-color);
+  font-weight: 550;
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  filter: brightness(.6);
+  font-style: italic;
 }
 
 .content-card--details__image {
@@ -235,16 +296,18 @@
 .content-card__circle {
   --circle-color: var(--card-color) !important;
   --circle-radius: 130px;
-  --circle--shift-down: 30px;
 }
 
+.content-card--competencies
+.content-card__circle {
+  --circle--shift-down: 30px;
+}
 .content-card--benefit
 .content-card__circle {
   --circle-radius: 100px;
+  --circle--shift-right: 8px;
   --circle--shift-down: 0;
-  --circle--shift--right: 8px;
   font-size: 3em;
-  font-weight: 700;
 }
 
 .content-card__bg {
@@ -256,7 +319,7 @@
     background-color: var(--color-competence);
 }
 
-.content-cards--competencies
+.content-card[class*="--accent-"]
 .content-card__list {
   color: var(--card-color);
   filter: brightness(.6);
@@ -287,13 +350,13 @@
   color: var(--color-accent-alt4);
 }
 
-.content-cards--competencies
+.content-card[class*="--accent-"]
 .content-card__btn {
   background-color: var(--card-color) !important;
   filter: none;
 }
 
-.content-cards--competencies
+.content-card[class*="--accent-"]
 .content-card__btn:hover {
   background-color: var(--card-color);
   filter: brightness(1.2) blur(.5px) grayscale(.5);

@@ -22,10 +22,9 @@
     .section--team__photo {
       width: 88px;
       height: 88px;
-      border-radius: 50%;
+      border-radius: 100%;
       object-fit: cover;
-      border: 3px solid var(--color-accent);
-      background: var(--color-dark);
+      background: var(--color-gray);
       margin-bottom: 15px;
     }
 

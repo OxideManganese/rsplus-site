@@ -1,0 +1,103 @@
+:root {
+  --color-competence: var(--color-accent-alt2);
+}
+
+.section--hero
+.wide-content-block {
+  margin-bottom: -71px;
+}
+
+.section--benefits {
+  background-color: var(--color-dark);
+}
+
+.content-cards--benefits {
+  margin-top: 30px;
+  margin-bottom: -170px;
+  position: relative;
+  z-index: 2;
+}
+
+.wide-content-block__subtitle {
+    margin-bottom: 10px;
+}
+
+
+.section--promo {
+    position: relative;
+    padding-bottom: 0;
+    color: #fff;
+    overflow: hidden;
+    background-color: var(--color-dark) !important;
+}
+
+
+.section--promo .section__content {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    align-content: center;
+    justify-content: center;
+    min-height: 550px;
+    max-width: 1300px;
+    padding-bottom: 0;
+    /* transition: all linear .2s; */
+}
+
+@media (min-width: 1200px) {
+    /* .is-not-scrolled  */
+    .section--promo .section__content {
+        min-height: 
+        min(
+            max(500px, calc(100vh - 536px)),
+            1000px
+        );
+    }
+}
+
+/* @media (min-width: 1600px) {
+
+    .section--process .section__content {
+        overflow: hidden;
+        position: relative;
+        transition: all .1s ease-in-out;
+    }
+
+    .section--process .content-cards--process {
+        width: 1600px;
+        transition: all 1s ease-in-out;
+    }
+
+    .section--process:hover .section__content {
+        overflow: visible;
+    }
+
+    .section--process:hover .content-cards--process {
+        margin-left: -18%;
+    }
+} */
+
+
+.section--promo .promo__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/service-banner.jpg");
+    opacity: .8;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+
+.section--promo .promo__overlay {
+    position: relative;
+    z-index: 1;
+    background: #0c1d30dc;
+    padding: 48px var(--container-padding);
+    max-width: calc(var(--container-width) - var(--container-padding) * 2);
+}
+
+.promo__title {
+    filter: brightness(1.3);
+}
+
