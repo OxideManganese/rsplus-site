@@ -5,6 +5,26 @@ import "../styles/service.css";
 const mechanics = Array.from({ length: 5 });
 const automatics = Array.from({ length: 4 });
 const mecano = Array.from({ length: 1 });
+
+const specialists = [
+    {
+        id: "mechanic",
+        title: "Меха<wbr>ников",
+        workers: Array.from({ length: 5 }), 
+    },
+    {
+        id: "automaitor",
+        title: "Автома<wbr>тчика",
+        workers: Array.from({ length: 4 }),
+        note: "+1 в I кв. 2025"
+    },
+    {
+        id: "mecano",
+        title: "Специа<wbr>лист Mecano",
+        workers: Array.from({ length: 1 }),
+        note: "+1 в I кв. 2025"
+    }
+]
 ---
 
 <BaseLayout title="Сервис | РС+">
@@ -316,7 +336,6 @@ const mecano = Array.from({ length: 1 });
             <div class="specialists">
                     <div class="specialists__diagram">
                         <div class="specialists__diagram-office">
-                            <!-- <BrandedCircle className="specialists__diagram-office_circle"></BrandedCircle> -->
                             <h3 class="specialists__office-title">ООО «РС+» Санкт-Петербург</h3>
                             <p class="specialists__office-subtitle">офис и склад запасных частей</p>
                             <img src="/images/colnechnaja-office.svg" alt="офис компании" class="specialists__office">
@@ -330,39 +349,20 @@ const mecano = Array.from({ length: 1 });
                             </span>
                         </h3>
                         <div class="specialists__groups">
-
-                            <div class="specialists-group specialists-group--mechanics">
-                            <div class="specialists-group__count">{mechanics.length}</div>
-                            <div class="specialists-group__info">
-                                <p class="specialists-group__title">Меха<wbr>ников</p>
-                                <div class="specialists-group__icons">
-                                    {mechanics.map(() => <div class="specialists-icon icon-specialist-mechanic"></div>)}
+                            {specialists.map(({ id, title, workers, note }) => (
+                                <div class={`specialists-group specialists-group--${id}`}>
+                                    <header>
+                                        <div class="specialists-group__count">{workers.length}</div>
+                                        <p class="specialists-group__title" set:html={title}></p>
+                                    </header>
+                                    <main class="specialists-group__icons">
+                                        {workers.map(() => (<div class={`specialists-icon icon-specialist-${id}`}></div>))}
+                                    </main>
+                                    <footer>
+                                        {note && <p class="specialists-group__note">{note}</p>}
+                                    </footer>
                                 </div>
-                            </div>
-                            </div>
-
-                            <div class="specialists-group specialists-group--automatics">
-                            <div class="specialists-group__count">{automatics.length}</div>
-                            <div class="specialists-group__info">
-                                <p class="specialists-group__title">Автома<wbr>тчика</p>
-                                <div class="specialists-group__icons">
-                                    {automatics.map(() => <div class="specialists-icon icon-specialist-automaitor"></div>)}
-                                </div>
-                                <p class="specialists-group__note">+1 в 1 кв. 2025</p>
-                            </div>
-                            </div>
-
-                            <div class="specialists-group specialists-group--mecano">
-                            <div class="specialists-group__count">{mecano.length}</div>
-                            <div class="specialists-group__info">
-                                <p class="specialists-group__title">Специа<wbr>лист Mecano</p>
-                                <div class="specialists-group__icons">
-                                    {mecano.map(() => <div class="specialists-icon icon-specialist-mecano"></div>)}
-                                </div>
-                                <p class="specialists-group__note">+1 в 1 кв. 2025</p>
-                            </div>
-                            </div>
-
+                            ))}
                         </div>
                     </div>
                 </div>

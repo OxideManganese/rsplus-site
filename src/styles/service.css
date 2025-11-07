@@ -182,6 +182,9 @@
     --group-color: var(--color-accent-alt4);
     --group-color-mutet: color-mix(in oklab, var(--group-color), #ffffff 85% );
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: var(--group-color-mutet);
     border-bottom: 6px solid var(--group-color);
     text-align: left;
