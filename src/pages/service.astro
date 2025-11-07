@@ -3,8 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BrandedCircle from "../components/BrandedCircle.astro";
 import "../styles/service.css";
 const mechanics = Array.from({ length: 5 });
-const automatics = Array.from({ length: 5 });
-const mecano = Array.from({ length: 2 });
+const automatics = Array.from({ length: 4 });
+const mecano = Array.from({ length: 1 });
 ---
 
 <BaseLayout title="Сервис | РС+">
@@ -30,7 +30,7 @@ const mecano = Array.from({ length: 2 });
         <section class="section section--benefits">
         <div class="section__content">
             <div class="content-cards content-cards--benefits content-cards--competencies">
-                <article class="content-card content-card--benefit content-card--competencies">
+                <article class="content-card content-card--benefit">
                     <div class="content-card__bg pale-background"></div>
                     <div class="content-card__icon-container">
                         <BrandedCircle className="content-card__circle" iconId="parts"></BrandedCircle>
@@ -42,7 +42,7 @@ const mecano = Array.from({ length: 2 });
                     </div>
                 </article>
 
-                <article class="content-card content-card--benefit content-card--competencies">
+                <article class="content-card content-card--benefit">
                     <div class="content-card__bg pale-background"></div>
                     <div class="content-card__icon-container">
                         <BrandedCircle className="content-card__circle" iconId="field-service"></BrandedCircle>
@@ -54,7 +54,7 @@ const mecano = Array.from({ length: 2 });
                     </div>
                 </article>
 
-                <article class="content-card content-card--benefit content-card--competencies">
+                <article class="content-card content-card--benefit">
                     <div class="content-card__bg pale-background "></div>
                     <div class="content-card__icon-container">
                         <BrandedCircle className="content-card__circle" iconId="target"></BrandedCircle>
@@ -66,7 +66,7 @@ const mecano = Array.from({ length: 2 });
                     </div>
                 </article>
 
-                <article class="content-card content-card--benefit content-card--competencies">
+                <article class="content-card content-card--benefit">
                     <div class="content-card__bg pale-background"></div>
                     <div class="content-card__icon-container">
                         <BrandedCircle className="content-card__circle" iconId="training"></BrandedCircle>
@@ -78,7 +78,7 @@ const mecano = Array.from({ length: 2 });
                     </div>
                 </article>
 
-                <article class="content-card content-card--benefit content-card--competencies">
+                <article class="content-card content-card--benefit">
                     <div class="content-card__bg pale-background"></div>
                     <div class="content-card__icon-container">
                         <BrandedCircle className="content-card__circle" iconId="modernization"></BrandedCircle>
@@ -309,114 +309,66 @@ const mecano = Array.from({ length: 2 });
 
 
 
-    <!-- <section class="section section--specialists">
-    <div class="section__content layout">
+    <section class="section section--specialists">
+        <div class="section__content">
+            <h2 class="section__title">Специалисты РС+</h2>
 
-        <div class="info">
+            <div class="specialists">
+                    <div class="specialists__diagram">
+                        <div class="specialists__diagram-office">
+                            <!-- <BrandedCircle className="specialists__diagram-office_circle"></BrandedCircle> -->
+                            <h3 class="specialists__office-title">Офис ООО «РС+»</h3>
+                            <p class="specialists__office-subtitle">Санкт-Петербург <br> (офис и склад запасных частей)</p>
+                            <img src="/images/colnechnaja-office.svg" alt="офис компании" class="specialists__office">
+                        </div>
 
-        <div class="info__card">
-            <h3 class="info__title">Квалифицированный персонал</h3>
-            <p class="info__text">
-            Квалифицированный персонал, вовлечённый в техническое обслуживание сложного оборудования – это репутация компании, связанная как с ответственностью перед третьими лицами за надёжность эксплуатируемого оборудования, так и за безопасность людей, его эксплуатирующих.
-            </p>
-        </div>
+                        <div class="specialists__diagram-specialists">
+                        <h3 class="specialists__diagram-title">
+                            <span>
+                                Технические специалисты РС+ <br>
+                                <i>— это репутация компании</i>
+                            </span>
+                        </h3>
+                        <div class="specialists__groups">
 
-        <div class="info__card">
-            <h3 class="info__title">Профессиональные навыки</h3>
-            <p class="info__text">
-            Специалисты обладают глубокими компетенциями в сервисе и техническом обслуживании сложного оборудования, обеспечивая безопасность и бесперебойность эксплуатации.
-            </p>
-        </div>
+                            <div class="specialists-group specialists-group--mechanics">
+                            <div class="specialists-group__count">{mechanics.length}</div>
+                            <div class="specialists-group__info">
+                                <p class="specialists-group__title">Механиков</p>
+                                <div class="specialists-group__icons">
+                                    {mechanics.map(() => <div class="specialists-icon icon-specialist-mechanic"></div>)}
+                                </div>
+                            </div>
+                            </div>
 
-        <div class="info__card">
-            <h3 class="info__title">Репутация и надёжность</h3>
-            <p class="info__text">
-            Ответственность перед клиентами и третьими лицами — основа нашей работы. Мы гарантируем высокое качество сервиса и соблюдение требований по безопасности.
-            </p>
-        </div>
+                            <div class="specialists-group specialists-group--automatics">
+                            <div class="specialists-group__count">{automatics.length}</div>
+                            <div class="specialists-group__info">
+                                <p class="specialists-group__title">автоматчика</p>
+                                <div class="specialists-group__icons">
+                                    {automatics.map(() => <div class="specialists-icon icon-specialist-automaitor"></div>)}
+                                </div>
+                                <p class="specialists-group__note">+1 в 1 кв. 2025</p>
+                            </div>
+                            </div>
 
-        </div>
-        <div class="specialists">
+                            <div class="specialists-group specialists-group--mecano">
+                            <div class="specialists-group__count">{mecano.length}</div>
+                            <div class="specialists-group__info">
+                                <p class="specialists-group__title">Специалист Mecano</p>
+                                <div class="specialists-group__icons">
+                                    {mecano.map(() => <div class="specialists-icon icon-specialist-mecano"></div>)}
+                                </div>
+                                <p class="specialists-group__note">+1 в 1 кв. 2025</p>
+                            </div>
+                            </div>
 
-        <div class="specialists__office">
-            <div class="specialists__office-card">
-            <h3 class="specialists__office-title">Офис ООО РС+</h3>
-            <p class="specialists__office-location">Санкт-Петербург</p>
-            <p class="specialists__office-note">(офис и склад запасных частей)</p>
-            </div>
-            <div class="specialists__connector"></div>
-        </div>
-
-        <div class="specialists__diagram">
-            <div class="specialists__diagram-office-image">IMG</div>
-
-            <div class="specialists__diagram-main">
-            <h3 class="specialists__diagram-title">Технические специалисты РС+ — это репутация компании</h3>
-
-            <div class="specialists__groups specialists__groups--row">
-
-                <div class="specialists-group specialists-group--mechanics specialists-group--row">
-                <div class="specialists-group__count">5</div>
-                <div class="specialists-group__info">
-                    <p class="specialists-group__title">Механики</p>
-                    <div class="specialists-group__icons">
-                    {mechanics.map(() => `<div class='specialists-icon'>🛠️</div>`).join("")}
+                        </div>
                     </div>
                 </div>
-                </div>
-
-                <div class="specialists-group specialists-group--automatics specialists-group--row">
-                <div class="specialists-group__count">4+1</div>
-                <div class="specialists-group__info">
-                    <p class="specialists-group__title">Автоматчики</p>
-                    <div class="specialists-group__icons">
-                    {automatics.map(() => `<div class='specialists-icon'>⚙️</div>`).join("")}
-                    <div class="specialists-icon specialists-icon--future">⚙️</div>
-                    </div>
-                    <p class="specialists-group__note">+1 в 1 кв. 2025</p>
-                </div>
-                </div>
-
-                <div class="specialists-group specialists-group--mecano specialists-group--row">
-                <div class="specialists-group__count">1+1</div>
-                <div class="specialists-group__info">
-                    <p class="specialists-group__title">Mecano</p>
-                    <div class="specialists-group__icons">
-                    {mecano.map(() => `<div class='specialists-icon'>🔧</div>`).join("")}
-                    <div class="specialists-icon specialists-icon--future">🔧</div>
-                    </div>
-                    <p class="specialists-group__note">+1 в 1 кв. 2025</p>
-                </div>
-                </div>
-
-            </div>
-            </div>
-
-                <div class="specialists-group specialists-group--automatics">
-                <p class="specialists-group__title">Автоматчики (4 +1)</p>
-                <div class="specialists-group__icons">
-                    {automatics.map(() => `<div class='specialists-icon'>⚙️</div>`).join("")}
-                    <div class="specialists-icon specialists-icon--future">⚙️</div>
-                </div>
-                <p class="specialists-group__note">+1 в 1 кв. 2025</p>
-                </div>
-
-                <div class="specialists-group specialists-group--mecano">
-                <p class="specialists-group__title">Mecano (1 +1)</p>
-                <div class="specialists-group__icons">
-                    {mecano.map(() => `<div class='specialists-icon'>🔧</div>`).join("")}
-                    <div class="specialists-icon specialists-icon--future">🔧</div>
-                </div>
-                <p class="specialists-group__note">+1 в 1 кв. 2025</p>
-                </div>
-
-            </div>
             </div>
         </div>
-
-        </div>
-    </div>
-</section> -->
+    </section>
 
     
 </BaseLayout>

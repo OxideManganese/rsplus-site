@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'rsplus';
-  src:  url('fonts/rsplus.eot?j48tjl');
-  src:  url('fonts/rsplus.eot?j48tjl#iefix') format('embedded-opentype'),
-    url('fonts/rsplus.ttf?j48tjl') format('truetype'),
-    url('fonts/rsplus.woff?j48tjl') format('woff'),
-    url('fonts/rsplus.svg?j48tjl#rsplus') format('svg');
+  src:  url('fonts/rsplus.eot?59layl');
+  src:  url('fonts/rsplus.eot?59layl#iefix') format('embedded-opentype'),
+    url('fonts/rsplus.ttf?59layl') format('truetype'),
+    url('fonts/rsplus.woff?59layl') format('woff'),
+    url('fonts/rsplus.svg?59layl#rsplus') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -35,6 +35,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-specialist-automaitor:before {
+  content: "\e913";
+}
+.icon-specialist-mecano:before {
+  content: "\e914";
+}
+.icon-specialist-mechanic:before {
+  content: "\e915";
+}
 .icon-completed:before {
   content: "\e90f";
 }
