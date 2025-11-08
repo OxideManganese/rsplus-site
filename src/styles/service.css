@@ -282,11 +282,6 @@
     }
 }
 
-@media (max-width: 700px) {
-    .specialists__diagram-specialists {
-        margin: 0 -24px;
-    }
-}
 
 @media (max-width: 600px) {
     .specialists__diagram-specialists {
