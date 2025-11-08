@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+.no {
+    width: 40px;
+    text-align: center;
+}
+
+/* Мобильная версия */
+@media (max-width: 900px) {
+    thead {
+        display: none;
+    }
+
+    table,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    tbody tr {
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    tbody td {
+        border: none;
+        padding: 4px 0;
+    }
+
+    .mobile-label {
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+
+    .no {
+        display: none;
+    }
+
+    .mobile-duplicate {
+        display: block;
+    }
+}
+
+@media (min-width: 901px) {
+    .mobile-duplicate {
+        display: none;
+    }
+}

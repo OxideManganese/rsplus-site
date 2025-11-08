@@ -1,0 +1,65 @@
+---
+import { load } from "cheerio";
+import "../styles/tables.css"
+
+// Получаем содержимое из слота
+let rawHTML = Astro.slots.has('default') 
+  ? await Astro.slots.render('default') 
+  : '';
+
+const $ = load(rawHTML);
+
+// Заголовки колонок
+const headers: string[] = [];
+$("table thead th").each((_, el) => {
+  headers.push($(el).text().trim());
+});
+
+// Добавляем мобильные подписи
+$("tbody tr").each((_, tr) => {
+  const cells = $(tr).children("td").toArray();
+  cells.forEach((td, i) => {
+    const label = `<div class="mobile-label">${headers[i] ?? ""}</div>`;
+    $(td).prepend(label);
+  });
+});
+
+// Обработка rowspan
+const allRows = $("tbody tr").toArray();
+
+$("td[rowspan]").each((_, td) => {
+  const rowspanAttr = $(td).attr("rowspan");
+  if (!rowspanAttr) return;
+  const rowspan = Number(rowspanAttr);
+  if (isNaN(rowspan) || rowspan <= 1) return;
+
+  const parentRow = $(td).parent().get(0);
+  if (!parentRow) return;
+
+  const baseIndex = allRows.indexOf(parentRow);
+  const cellIndex = $(td).index();
+
+  for (let i = 1; i < rowspan; i++) {
+    const targetRow = allRows[baseIndex + i];
+    if (!targetRow) continue;
+
+    const cloneRoot = load("<td></td>");
+    const clone = cloneRoot("td");
+    clone.html($(td).html() ?? "");
+    clone.addClass("mobile-duplicate");
+
+    const $target = $(targetRow);
+    const children = $target.children("td").toArray();
+
+    if (children[cellIndex]) {
+      $(children[cellIndex]).before(clone);
+    } else {
+      $target.append(clone);
+    }
+  }
+});
+
+const finalHTML = $.html();
+---
+
+<div class="table-wrapper" set:html={finalHTML}></div>
