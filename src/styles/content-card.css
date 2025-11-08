@@ -11,6 +11,10 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+.content-cards--two-columns {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .content-cards--details {
   display: flex;
   flex-wrap: wrap;
@@ -180,6 +184,20 @@
   padding-left: 18px;
 }
 
+.content-card--benefit .content-card__list {
+  color: var(--color-competence);
+  filter: brightness(.4);
+}
+
+.content-card--benefit .content-card__list li {
+  padding-left: 12px;
+}
+
+.content-card--benefit .content-card__list li::marker {
+  content: "✔";
+  color: var(--color-accent-alt4)
+}
+
 .content-card__meta {
   margin-top: 1em;
   color: var(--card-color);
@@ -211,6 +229,7 @@
   margin: -24px -24px 0;
 }
 
+
 .content-card__image--detail {
   display: flex;
   align-items: center;
@@ -222,6 +241,12 @@
   height: 200px;
   object-fit: cover;
   filter: blur(.5px);
+}
+
+.content-card--picture .content-card__image img {
+  position: absolute;
+  height: 100%;
+  top: 0;
 }
 
 .content-card__image--detail img {

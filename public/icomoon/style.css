@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'rsplus';
-  src:  url('fonts/rsplus.eot?59layl');
-  src:  url('fonts/rsplus.eot?59layl#iefix') format('embedded-opentype'),
-    url('fonts/rsplus.ttf?59layl') format('truetype'),
-    url('fonts/rsplus.woff?59layl') format('woff'),
-    url('fonts/rsplus.svg?59layl#rsplus') format('svg');
+  src:  url('fonts/rsplus.eot?69nlo1');
+  src:  url('fonts/rsplus.eot?69nlo1#iefix') format('embedded-opentype'),
+    url('fonts/rsplus.ttf?69nlo1') format('truetype'),
+    url('fonts/rsplus.woff?69nlo1') format('woff'),
+    url('fonts/rsplus.svg?69nlo1#rsplus') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -35,6 +35,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-field-service:before {
+  content: "\e90d";
+}
+.icon-gody-nastrojki:before {
+  content: "\e916";
+}
+.icon-navyki:before {
+  content: "\e917";
+}
+.icon-obrazovanie:before {
+  content: "\e918";
+}
 .icon-specialist-automaitor:before {
   content: "\e913";
 }
@@ -46,9 +58,6 @@
 }
 .icon-completed:before {
   content: "\e90f";
-}
-.icon-field-service:before {
-  content: "\e90d";
 }
 .icon-monitoring:before {
   content: "\e910";

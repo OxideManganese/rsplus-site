@@ -58,7 +58,7 @@
 .section--promo .promo__bg {
     position: absolute;
     inset: 0;
-    background-image: url("/images/service-banner.jpg");
+    background-image: url("/images/service/service-banner.jpg");
     opacity: .8;
     background-size: cover;
     background-position: center;
@@ -83,15 +83,15 @@
     gap: 7px
 }
 
-
-.specialists__diagram-office,
-.specialists__diagram-specialists {
- text-align: center;
- align-items: center;
- margin: 0 auto;
+.specialists__diagram {
+    margin-bottom: 24px;
 }
 
+
 .specialists__diagram-office {
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
     padding: 24px 48px;
     display: flex;
     flex-direction: column;
@@ -134,10 +134,12 @@
 .specialists__diagram-specialists {
     padding: 48px;
     padding-top: 136px;
+    margin: 0 -48px;
     background-color: var(--color-light-gray);
 }
 
 .specialists__diagram-title {
+    text-align: center;
     text-transform: none;
     color: var(--text-color);
     font-weight: 550;
@@ -160,11 +162,12 @@
 }
 
 .specialists__diagram-title::after {
- margin-right: 50%;
+    margin-right: 50%;
+    width: calc(50% + 12px);
 }
 
 .specialists__diagram-title::before {
-     margin-left: 50%;
+     margin-left: calc(50% - 12px);
 }
 
 .specialists__diagram-title i {
@@ -251,6 +254,23 @@
     margin-bottom: -6px;
 }
 
+
+.section--specialists .content-card--benefit {
+    flex-direction: row-reverse;
+    --color-competence: var(--color-accent-alt3);
+}
+
+.section--specialists .content-card__icon-container {
+    margin-left: 0px;
+    margin-right: -52px;
+}
+
+.section--specialists .content-card__circle {
+    --circle--shift-right: -8px;
+    --circle-color: var(--color-accent-alt4) !important;
+    filter: brightness(.9);
+}
+
 @media (max-width: 1150px) {
     .specialists-group__icons {
         justify-content: space-evenly;
@@ -280,8 +300,24 @@
         width: calc(100% + 82px);
         left: -44px;
     }
+
+    .specialists__diagram-title::after {
+        margin-right: 50%;
+        width: 50%;
+    }
+
+    .specialists__diagram-title::before {
+        margin-left: 50%;
+        width: 50%;
+    }
 }
 
+@media (max-width: 1300px) {
+    .specialists__diagram-specialists {
+        margin: 0 -24px;
+        padding: 136px 24px 48px;
+    }
+}
 
 @media (max-width: 600px) {
     .specialists__diagram-specialists {

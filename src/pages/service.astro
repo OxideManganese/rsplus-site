@@ -9,20 +9,18 @@ const mecano = Array.from({ length: 1 });
 const specialists = [
     {
         id: "mechanic",
-        title: "Меха<wbr>ников",
-        workers: Array.from({ length: 5 }), 
+        title: "Меха<wbr>ника",
+        workers: Array.from({ length: 4 }), 
     },
     {
         id: "automaitor",
         title: "Автома<wbr>тчика",
-        workers: Array.from({ length: 4 }),
-        note: "+1 в I кв. 2025"
+        workers: Array.from({ length: 4 })
     },
     {
         id: "mecano",
         title: "Специа<wbr>лист Mecano",
-        workers: Array.from({ length: 1 }),
-        note: "+1 в I кв. 2025"
+        workers: Array.from({ length: 1 })
     }
 ]
 ---
@@ -57,7 +55,7 @@ const specialists = [
                     </div>
                     <div class="content-card__body">
                         <p class="content-card__text">
-                            Запасные части и комплектующие
+                            Рекомендации по запасным частям
                         </p>
                     </div>
                 </article>
@@ -130,7 +128,7 @@ const specialists = [
         <div class="section__content">
             <p class="section__pretitle">Техническое обслуживание и ремонт станков по производству фанеры</p>
             <h2 class="section__title">Для заводов с автоматизированными системами ТОиР</h2> 
-            <div class="content-cards">
+            <div class="content-cards content-cards--two-columns">
                 <div class="content-card">
                     <div class="content-card__body">
                         <h3 class="content-card__title">Преимущества работы с нами</h3>
@@ -145,6 +143,18 @@ const specialists = [
                         </ul>
                     </div>
                 </div>
+
+                <!-- <div class="content-card content-card--picture">
+                    <div class="content-card__image">
+                        <img src="/images/service/remont.jpg" alt="Ремонт оборудования">
+                    </div>
+                </div>
+
+                <div class="content-card content-card--picture">
+                    <div class="content-card__image">
+                        <img src="/images/service/spindlies.png" alt="Шпиндели">
+                    </div>
+                </div> -->
 
                 <div class="content-card">
                     <div class="content-card__body">
@@ -333,23 +343,21 @@ const specialists = [
         <div class="section__content">
             <h2 class="section__title">Специалисты РС+</h2>
 
-            <div class="specialists">
-                    <div class="specialists__diagram">
-                        <div class="specialists__diagram-office">
-                            <h3 class="specialists__office-title">ООО «РС+» Санкт-Петербург</h3>
-                            <p class="specialists__office-subtitle">офис и склад запасных частей</p>
-                            <img src="/images/colnechnaja-office.svg" alt="офис компании" class="specialists__office">
-                        </div>
-
-                        <div class="specialists__diagram-specialists">
+               <div class="specialists__diagram">
+                    <div class="specialists__diagram-office">
+                        <h3 class="specialists__office-title">ООО «РС+» Санкт-Петербург</h3>
+                        <p class="specialists__office-subtitle">офис и склад запасных частей</p>
+                        <img src="/images/colnechnaja-office.svg" alt="офис компании" class="specialists__office">
+                    </div>
+                    <div class="specialists__diagram-specialists">
                         <h3 class="specialists__diagram-title">
                             <span>
                                 Технические специалисты РС+ <br>
-                                <i>— это репутация компании</i>
+                                <i>— репутация компании</i>
                             </span>
                         </h3>
                         <div class="specialists__groups">
-                            {specialists.map(({ id, title, workers, note }) => (
+                            {specialists.map(({ id, title, workers }) => (
                                 <div class={`specialists-group specialists-group--${id}`}>
                                     <header>
                                         <div class="specialists-group__count">{workers.length}</div>
@@ -358,17 +366,58 @@ const specialists = [
                                     <main class="specialists-group__icons">
                                         {workers.map(() => (<div class={`specialists-icon icon-specialist-${id}`}></div>))}
                                     </main>
-                                    <footer>
-                                        {note && <p class="specialists-group__note">{note}</p>}
-                                    </footer>
                                 </div>
                             ))}
                         </div>
+
+                        <p style="margin: 24px auto 0; max-width: 800px;text-indent: 24px;font-weight: 500;">
+                        Квалифицированный персонал, вовлеченный в техническое обслуживания сложного оборудования, — это репутация компании, связанная как с ответственностью перед третьими лицами за надежность эксплуатируемого оборудования, так и за безопасность людей его эксплуатирующих.
+                        </p>
                     </div>
                 </div>
-            </div>
+
+                <h3 style="text-align:center">Почему специалисты РС+ надёжны</h3>
+
+                <div class="content-cards content-cards--benefits content-cards--competencies">
+                    <article class="content-card content-card--benefit">
+                        <div class="content-card__bg pale-background"></div>
+                        <div class="content-card__icon-container">
+                            <BrandedCircle className="content-card__circle" iconId="obrazovanie"></BrandedCircle>
+                        </div>
+                        <div class="content-card__body">
+                             <ul class="content-card__list">
+                                <li>Многоуровневый отбор</li>
+                                <li>Системный процесс обучения</li>
+                                <li>Непрерывное совершенствование навыков</li>
+                            </ul>
+                        </div>
+                    </article>
+
+
+                    <article class="content-card content-card--benefit">
+                        <div class="content-card__bg pale-background"></div>
+                        <div class="content-card__icon-container">
+                            <BrandedCircle className="content-card__circle" iconId="gody-nastrojki"></BrandedCircle>
+                        </div>
+                        <div class="content-card__body">
+                             <ul class="content-card__list">
+                                <li>Средний возраст специалистов: 41 год</li>
+                                <li>Средний стаж на технических должностях: 22 года</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="content-card content-card--benefit">
+                        <div class="content-card__bg pale-background"></div>
+                        <div class="content-card__icon-container">
+                            <BrandedCircle className="content-card__circle" iconId="navyki"></BrandedCircle>
+                        </div>
+                            <ul class="content-card__list">
+                                <li>Опыт: инженеры АСУТП, инженеры-механики, главные механики (в т.ч. фанерных заводов)</li>
+                            </ul>
+                    </article>
+                </div>
         </div>
     </section>
-
     
 </BaseLayout>
