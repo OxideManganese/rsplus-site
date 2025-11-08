@@ -98,17 +98,17 @@
     max-width: 350px;
     background-color: color-mix(in oklab, var(--color-accent-alt2), #ffffff 90% );
     border-bottom: 6px solid var(--color-accent-alt2);
-    margin-bottom: -80px;
+    margin-bottom: -100px;
     position: relative;
 }
 
-.specialists__diagram-office::before {
+.specialists__diagram-office::after {
     content: "";
     position: absolute;
     border-left: 2px dashed var(--color-dark);
     left: 50%;
-    bottom: -48px;
-    height: 42px;
+    bottom: -42px;
+    height: 36px;
 }
 
 .specialists__office-title {
@@ -133,7 +133,7 @@
 
 .specialists__diagram-specialists {
     padding: 48px;
-    padding-top: 124px;
+    padding-top: 136px;
     background-color: var(--color-light-gray);
 }
 
@@ -202,8 +202,8 @@
 
 
 .specialists-group:nth-child(2)::before {
-    top: -24px;
-    height: 24px;
+    top: -36px;
+    height: 36px;
 }
 
 .specialists-group__count {
@@ -273,8 +273,12 @@
     }
 
     .specialists__diagram-title span {
-        padding: 0;
+        padding: 0 6px;
         margin: 0;
+        background: #eee;
+        position: relative;
+        width: calc(100% + 82px);
+        left: -44px;
     }
 }
 
