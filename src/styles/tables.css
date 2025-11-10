@@ -1,72 +1,91 @@
-body {
-    margin: 0;
-    padding: 20px;
-    font-family: sans-serif;
-}
 
-table {
+.adaptuve-table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 12px;
 }
 
-thead th {
-    text-align: left;
-    padding: 8px;
-    border-bottom: 1px solid #ccc;
+.section:nth-of-type(odd)  .adaptuve-table  {
+    background-color: var(--color-bg);
 }
 
-tbody td {
-    padding: 8px;
-    border-bottom: 1px solid #eee;
+.section:nth-of-type(even) .adaptuve-table  {
+    background-color: var(--color-bg-alt);
+}
+
+
+
+
+.adaptuve-table__thead {
+    background: var(--color-accent);
+    color: var(--color-text-negative);
+}
+
+.adaptuve-table__thead th {
+    padding: 12px;
+    border: 1px solid var(--color-gray);
+}
+
+.adaptuve-table__subth {
+    font-style: italic;
+    opacity: .8;
+    font-size: var(--font-size-sm);
+}
+
+
+
+
+.adaptuve-table__tbody td {
+    padding: 12px;
+    border: 1px solid var(--color-gray);
     vertical-align: top;
 }
 
-.no {
-    width: 40px;
-    text-align: center;
+.adaptuve-table__tbody td u {
+    color: var(--color-dark);
 }
 
-/* Мобильная версия */
+.adaptuve-table__tbody td[rowspan] {
+    vertical-align: middle;
+}
+
+.adaptuve-table__mobile-duplicate,
+.adaptuve-table__mobile-label {
+    display: none;
+}
+
+
 @media (max-width: 900px) {
-    thead {
+    .adaptuve-table__thead {
         display: none;
     }
 
-    table,
-    tbody,
-    tr,
-    td {
+    .adaptuve-table,
+    .adaptuve-table__tbody,
+    .adaptuve-table tr,
+    .adaptuve-table td {
         display: block;
         width: 100%;
     }
 
-    tbody tr {
+    .adaptuve-table__tbody tr {
         margin-bottom: 12px;
         border: 1px solid #ddd;
         padding: 8px;
     }
 
-    tbody td {
+    .adaptuve-table__tbody td {
         border: none;
         padding: 4px 0;
     }
 
-    .mobile-label {
+    .adaptuve-table__mobile-label {
+        display: block;
         font-weight: bold;
         margin-bottom: 4px;
     }
 
-    .no {
-        display: none;
-    }
-
-    .mobile-duplicate {
+    .adaptuve-table__mobile-duplicate {
         display: block;
-    }
-}
-
-@media (min-width: 901px) {
-    .mobile-duplicate {
-        display: none;
     }
 }
