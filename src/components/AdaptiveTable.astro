@@ -20,7 +20,7 @@ $("table thead th").each((_, el) => {
 $("tbody tr").each((_, tr) => {
   const cells = $(tr).children("td").toArray();
   cells.forEach((td, i) => {
-    const label = `<div class="mobile-label">${headers[i] ?? ""}</div>`;
+    const label = `<div class="adaptuve-table__mobile-label">${headers[i] ?? ""}</div>`;
     $(td).prepend(label);
   });
 });
@@ -47,7 +47,7 @@ $("td[rowspan]").each((_, td) => {
     const cloneRoot = load("<td></td>");
     const clone = cloneRoot("td");
     clone.html($(td).html() ?? "");
-    clone.addClass("mobile-duplicate");
+    clone.addClass("adaptuve-table__mobile-duplicate");
 
     const $target = $(targetRow);
     const children = $target.children("td").toArray();
