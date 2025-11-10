@@ -15,7 +15,8 @@ $("table thead th").each((_, el) => {
   headers.push($(el).text().trim());
 });
 
-// Добавляем мобильные подписи
+// Добавляем мобильные 
+// подписи
 $("tbody tr").each((_, tr) => {
   const cells = $(tr).children("td").toArray();
   cells.forEach((td, i) => {
