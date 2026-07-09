@@ -3,9 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BrandedCircle from "../components/BrandedCircle.astro";
 import AdaptiveTable from "../components/AdaptiveTable.astro";
 import "../styles/service.css";
-const mechanics = Array.from({ length: 5 });
-const automatics = Array.from({ length: 4 });
-const mecano = Array.from({ length: 1 });
 
 const specialists = [
     {
@@ -14,7 +11,7 @@ const specialists = [
         workers: Array.from({ length: 4 }), 
     },
     {
-        id: "automaitor",
+        id: "automator",
         title: "Автома<wbr>тчика",
         workers: Array.from({ length: 4 })
     },
@@ -122,6 +119,51 @@ const specialists = [
     </section>
 
 
+    <!-- <section class="section">
+        <div class="section__content">
+            <div class="content-cards">
+
+                    <div class="content-card content-card--accent-alt2">
+                        <div class="content-card__bg pale-background"></div>
+                        <div class="content-card__body">
+                            <h4 class="content-card__title">Этапы планового сервисного визита</h4>
+                            <p class="content-card__text">Пять шагов к восстановлению эффективности: от сбора вводных данных до долгосрочного мониторинга.</p>
+                        </div>
+                        <div class="content-card__footer">
+                                <a href="#service-visit-process" class="btn content-card__btn">Подробнее</a>
+                        </div>
+                    </div>
+
+                   <div class="content-card content-card--accent-alt5">
+                        <div class="content-card__bg pale-background"></div>
+                        <div class="content-card__body">
+                            <h4 class="content-card__title">Сервисные услуги</h4>
+                            <p class="content-card__text">Цены, форматы работы и ожидаемый экономический эффект.</p>
+                        </div>
+                        <div class="content-card__footer">
+                                <a href="#service-list" class="btn content-card__btn">Подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="content-card content-card--accent-alt4">
+                        <div class="content-card__bg pale-background"></div>
+                        <div class="content-card__body">
+                            <h4 class="content-card__title">Специалисты РС+</h4>
+                            <p class="content-card__text">
+                                Проверенная команда инженеров со средним техническим стажем 22 года.
+                            </p>
+                        </div>
+                        <div class="content-card__footer">
+                                <a href="#specialists" class="btn content-card__btn">Подробнее</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
         <section class="section section--maintenance">
         <div class="section__content">
             <p class="section__pretitle">Техническое обслуживание и ремонт станков по производству фанеры</p>
@@ -204,7 +246,7 @@ const specialists = [
     </section> -->
 
 
-    <section class="section section--process" aria-label="Этапы планового сервисного визита">
+    <section class="section section--process" aria-label="Этапы планового сервисного визита" id="service-visit-process">
         <div class="section__content">
         <h2 class="section__title">Этапы планового сервисного визита</h2>
             <div class="content-cards content-cards--process">
@@ -216,7 +258,7 @@ const specialists = [
                     <div class="content-card__icon-container">
                         <BrandedCircle className="content-card__circle" iconId="target"></BrandedCircle>
                     </div>
-                    <div class="conteny-card__title-container">
+                    <div class="content-card__title-container">
                         <h3 class="content-card__title"><i>Шаг 1</i></h3>
                         <h4 class="content-card__subtitle">планирование визита</h4>
                     </div>
@@ -241,7 +283,7 @@ const specialists = [
                     <div class="content-card__icon-container">
                         <BrandedCircle className="content-card__circle" iconId="operator"></BrandedCircle>
                     </div>
-                    <div class="conteny-card__title-container">
+                    <div class="content-card__title-container">
                         <h3 class="content-card__title"><i>Шаг 2</i></h3>
                         <h4 class="content-card__subtitle">подготовка к визиту</h4>
                     </div>
@@ -266,7 +308,7 @@ const specialists = [
                     <div class="content-card__icon-container">
                         <BrandedCircle className="content-card__circle" iconId="tehnick"></BrandedCircle>
                     </div>
-                    <div class="conteny-card__title-container">
+                    <div class="content-card__title-container">
                         <h3 class="content-card__title"><i>Шаг 3</i></h3>
                         <h4 class="content-card__subtitle">проведение визита</h4>
                     </div>
@@ -291,7 +333,7 @@ const specialists = [
                     <div class="content-card__icon-container">
                         <BrandedCircle className="content-card__circle" iconId="monitoring"></BrandedCircle>
                     </div>
-                    <div class="conteny-card__title-container">
+                    <div class="content-card__title-container">
                         <h3 class="content-card__title"><i>Шаг 4</i></h3>
                         <h4 class="content-card__subtitle">отслеживание</h4>
                     </div>
@@ -314,7 +356,7 @@ const specialists = [
                     <div class="content-card__icon-container">
                         <BrandedCircle className="content-card__circle" iconId="completed"></BrandedCircle>
                     </div>
-                    <div class="conteny-card__title-container">
+                    <div class="content-card__title-container">
                         <h4 class="content-card__subtitle">Результат</h4>
                     </div>
                     </div>
@@ -338,7 +380,7 @@ const specialists = [
 
 
 
-    <section class="section section--specialists">
+    <section class="section section--specialists" id="specialists">
         <div class="section__content">
             <h2 class="section__title">Специалисты РС+</h2>
 
@@ -419,7 +461,7 @@ const specialists = [
         </div>
     </section>
 
-    <section class="section section--service">
+    <section class="section section--service" id="service-list">
         <div class="section__content">
             <h2 class="section__title">Сервисные услуги</h2>
 
