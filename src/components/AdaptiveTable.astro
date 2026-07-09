@@ -2,61 +2,78 @@
 import { load } from "cheerio";
 import "../styles/tables.css"
 
-// Получаем содержимое из слота
 let rawHTML = Astro.slots.has('default') 
   ? await Astro.slots.render('default') 
   : '';
 
 const $ = load(rawHTML);
 
-// Заголовки колонок
+// 1. Собираем чистые заголовки колонок
 const headers: string[] = [];
 $("table thead th").each((_, el) => {
-  headers.push($(el).text().trim());
+  const $clone = $(el).clone();
+  $clone.find(".adaptuve-table__subth").remove(); // убираем мелкий текст из лейбла
+  $clone.find("br").remove();
+  headers.push($clone.text().trim());
 });
 
-// Добавляем мобильные подписи
-$("tbody tr").each((_, tr) => {
+// 2. ОБРАБОТКА ROWSPAN (ИСПРАВЛЕННАЯ ЛОГИКА)
+const allRows = $("tbody tr").toArray();
+
+$("tbody tr").each((rowIndex, tr) => {
   const cells = $(tr).children("td").toArray();
-  cells.forEach((td, i) => {
-    const label = `<div class="adaptuve-table__mobile-label">${headers[i] ?? ""}</div>`;
-    $(td).prepend(label);
+  
+  cells.forEach((td) => {
+    const rowspanAttr = $(td).attr("rowspan");
+    if (!rowspanAttr) return;
+    
+    const rowspan = Number(rowspanAttr);
+    if (isNaN(rowspan) || rowspan <= 1) return;
+
+    // Помечаем оригинал, чтобы скрыть его на мобильных
+    $(td).addClass("adaptuve-table__original-rowspan");
+
+    // Вычисляем РЕАЛЬНЫЙ индекс колонки для этого td на десктопе.
+    // Так как это последняя колонка в строке №2, её индекс равен 3 (четвертая по счету).
+    const targetColumnIndex = $(td).index(); 
+
+    // Клонируем контент строго во все нижележащие строки, попадающие под rowspan
+    for (let i = 1; i < rowspan; i++) {
+      const targetRow = allRows[rowIndex + i];
+      if (!targetRow) continue;
+
+      // Создаем дубликат ячейки
+      const clone = $("<td></td>")
+        .html($(td).html() ?? "")
+        .addClass("adaptuve-table__mobile-duplicate");
+
+      const $targetRow = $(targetRow);
+      const targetCells = $targetRow.children("td").toArray();
+
+      // Безопасная вставка: 
+      // Если в целевой строке элементов меньше, чем нужный индекс, просто пушим в конец.
+      // Если элементы есть, вставляем точно перед элементом, который сейчас занимает это место.
+      if (targetCells[targetColumnIndex]) {
+        $(targetCells[targetColumnIndex]).before(clone);
+      } else {
+        $targetRow.append(clone);
+      }
+    }
   });
 });
 
-// Обработка rowspan
-const allRows = $("tbody tr").toArray();
-
-$("td[rowspan]").each((_, td) => {
-  const rowspanAttr = $(td).attr("rowspan");
-  if (!rowspanAttr) return;
-  const rowspan = Number(rowspanAttr);
-  if (isNaN(rowspan) || rowspan <= 1) return;
-
-  const parentRow = $(td).parent().get(0);
-  if (!parentRow) return;
-
-  const baseIndex = allRows.indexOf(parentRow);
-  const cellIndex = $(td).index();
-
-  for (let i = 1; i < rowspan; i++) {
-    const targetRow = allRows[baseIndex + i];
-    if (!targetRow) continue;
-
-    const cloneRoot = load("<td></td>");
-    const clone = cloneRoot("td");
-    clone.html($(td).html() ?? "");
-    clone.addClass("adaptuve-table__mobile-duplicate");
-
-    const $target = $(targetRow);
-    const children = $target.children("td").toArray();
-
-    if (children[cellIndex]) {
-      $(children[cellIndex]).before(clone);
-    } else {
-      $target.append(clone);
+// 3. РАССТАНОВКА МОБИЛЬНЫХ ЛЕЙБЛОВ
+// Теперь во всех строках (включая 3 и 4) гарантированно по 4 ячейки td.
+// Мы можем безопасно пройтись по ним и раздать правильные заголовки.
+$("tbody tr").each((_, tr) => {
+  const cells = $(tr).children("td").toArray();
+  cells.forEach((td, i) => {
+    const labelText = headers[i] ?? "";
+    if (labelText) {
+      const label = `<div class="adaptuve-table__mobile-label">${labelText}</div>`;
+      $(td).prepend(label);
     }
-  }
+  });
 });
 
 const finalHTML = $.html();
