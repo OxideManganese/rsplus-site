@@ -17,8 +17,11 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm use 22
             cd /var/www/rsplus-spb.ru
             git pull origin main
             npm install
             npm run build
-            pm2 restart rsplus-spb
+            pm2 restart rsplus-website || pm2 start dist/server/entry.mjs --name "rsplus-website"
