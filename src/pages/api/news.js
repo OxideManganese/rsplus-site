@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+//mport fetch from "node-fetch";
 import { load } from "cheerio";
 
 // id канала в telegram
@@ -130,6 +130,7 @@ async function fetchTelegramNews(channel, limit = 50) {
 //     };
 //   }
 // }
+
 
 export async function GET({ url }) {
   try {
