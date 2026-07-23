@@ -1,12 +1,25 @@
 import { fetch, ProxyAgent } from 'undici';
 import { load } from 'cheerio';
 import net from 'node:net';
+import crypto from 'node:crypto'; // Добавляем криптографию для ETag
 
 const Channel = "rsplus_spb";
 const PROXY_HOST = '127.0.0.1';
 const PROXY_PORT = 10808;
 
 const proxyAgent = new ProxyAgent(`http://${PROXY_HOST}:${PROXY_PORT}`);
+
+const CACHE_TTL = 30 * 60 * 1000; // 30 минут
+const cache = new Map(); 
+// Структура хранилища: key -> { data, hash, timestamp }
+
+function getCacheKey(channel, limit) {
+  return `${channel}:${limit}`;
+}
+
+function generateHash(data) {
+  return crypto.createHash('md5').update(JSON.stringify(data)).digest('hex');
+}
 
 function extractUrlFromStyle(style) {
   const match = style.match(/url\((?:'|")?(.*?)(?:'|")?\)/);
@@ -38,9 +51,18 @@ function isProxyAlive(host = PROXY_HOST, port = PROXY_PORT, timeout = 300) {
 }
 
 export async function fetchTelegramNews(channel = Channel, limit = 50) {
+  const cacheKey = getCacheKey(channel, limit);
+  const now = Date.now();
+  const cached = cache.get(cacheKey);
+
+  // 1. Проверяем наличие свежего кэша на сервере
+  if (cached && (now - cached.timestamp < CACHE_TTL)) {
+    console.log(`[Cache Hit] Returning cached data for ${cacheKey}`);
+    return cached;
+  }
+
+  // 2. Если кэш устарел или его нет — делаем запрос
   const hasProxy = await isProxyAlive();
-  
-  // Если прокси активен — используем dispatcher, иначе — пустые опции (прямой запрос)
   const fetchOptions = hasProxy ? { dispatcher: proxyAgent } : {};
 
   try {
@@ -50,9 +72,8 @@ export async function fetchTelegramNews(channel = Channel, limit = 50) {
     const html = await res.text();
     const $ = load(html);
 
-    console.log(res.status, res.statusText, `Proxy active: ${hasProxy}`);
+    console.log(`[Fetch Telegram] Status: ${res.status}, Proxy: ${hasProxy}`);
 
-    
     const main = $(`main.tgme_main[data-url="/${channel}"]`);
     if (!main.length) throw new Error("Main content not found");
 
@@ -137,68 +158,47 @@ export async function fetchTelegramNews(channel = Channel, limit = 50) {
       posts.push(post);
     });
 
-    return posts;
-    
+    // 3. Сохраняем результат и хэш в кэш
+    const hash = generateHash(posts);
+    const cacheRecord = { data: posts, hash, timestamp: now };
+    cache.set(cacheKey, cacheRecord);
+
+    return cacheRecord;
 
   } catch (error) {
     console.error(`[Telegram Fetch Error] (Proxy active: ${hasProxy}):`, error.message);
+    
+    if (cached) {
+      console.warn(`[Cache Fallback] Returning stale cache due to fetch error.`);
+      return cached;
+    }
+    
     throw error;
   }
 }
 
-
-// async function fetchTelegramNews(channel, limit = 50) {
-//   const dispatcher = await getDispatcher();
-//   const fetchOptions = dispatcher ? { dispatcher } : {};
-//   const res = await fetch(`https://t.me/s/${channel}`, fetchOptions);
-//   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  
-//   const html = await res.text();
-//   const $ = load(html);
-
-  
-// }
-
-/** Lambda / Serverless handler */
-// export async function handler(event) {
-//   try {
-//     const params = event.queryStringParameters || {};
-//     const channel = params.channel;
-//     const limit = params.limit ? parseInt(params.limit, 10) : 50;
-
-//     if (!channel) {
-//       return {
-//         statusCode: 400,
-//         body: JSON.stringify({ error: "Parameter 'channel' is required" }),
-//       };
-//     }
-
-//     const posts = await fetchTelegramNews(channel, limit);
-
-//     return {
-//       statusCode: 200,
-//       body: JSON.stringify(posts),
-//       headers: { "Content-Type": "application/json" },
-//     };
-//   } catch (err) {
-//     return {
-//       statusCode: 500,
-//       body: JSON.stringify({ error: err.message }),
-//     };
-//   }
-// }
-
-
-export async function GET({ url }) {
+export async function GET({ request, url }) {
   try {
     const params = Object.fromEntries(url.searchParams.entries());
     const limit = params.limit ? parseInt(params.limit, 10) : 50;
 
-    const posts = await fetchTelegramNews(Channel, limit);
+    // Получаем распарсенные данные и их хэш из кэша/запроса
+    const { data, hash } = await fetchTelegramNews(Channel, limit);
 
-    return new Response(JSON.stringify(posts), {
+    // Проверяем заголовки клиента на совпадение хэша (ETag)
+    const clientEtag = request?.headers?.get('If-None-Match');
+    if (clientEtag === `"${hash}"`) {
+      // Контент не менялся — возвращаем 304 Not Modified без тела ответа
+      return new Response(null, { status: 304 });
+    }
+
+    return new Response(JSON.stringify(data), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'ETag': `"${hash}"`, // Отправляем хэш клиенту
+        'Cache-Control': 'public, max-age=1800' // Разрешаем браузеру кэшировать на 30 мин
+      },
     });
   } catch (err) {
     return new Response(JSON.stringify({ error: err.message }), {
