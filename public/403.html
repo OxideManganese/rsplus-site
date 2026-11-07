@@ -157,19 +157,15 @@
             const val = document.getElementById('accessKey').value.trim();
             const errorMsg = document.getElementById('errorMsg');
 
-            // Сверяем введенный ключ с вашим секретом (secret123)
-            if (val === 'secret123') {
-                // Сохраняем куку на 1 год, доступную для всего сайта (path=/)
-                document.cookie = "access_granted=secret123; path=/; max-age=31536000; SameSite=Lax";
-                errorMsg.style.display = 'none';
-                // Перенаправляем пользователя на главную страницу (или перезагружаем текущую)
-                window.location.href = '/';
-            } else {
-                // Показываем ошибку, если ввели не то
-                errorMsg.style.display = 'block';
-                document.getElementById('accessKey').value = '';
-            }
+            document.cookie = `access_granted=${document.querySelector("input").value}; path=/; max-age=31536000; SameSite=Lax`;
+            errorMsg.style.display = 'none';
+            window.location.href = '/';
         });
+
+        if(document.cookie.includes('access_granted=')) {
+            errorMsg.style.display = 'block';
+            document.getElementById('accessKey').value = '';
+        }
 
         // Поддержка нажатия Enter в поле ввода
         document.getElementById('accessKey').addEventListener('keypress', function(e) {
