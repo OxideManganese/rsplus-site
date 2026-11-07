@@ -10,8 +10,10 @@
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --accent: #ef4444;
+            --success: #22c55e;
             --card-bg: rgba(30, 41, 59, 0.5);
             --border: rgba(255, 255, 255, 0.08);
+            --input-bg: rgba(15, 23, 42, 0.6);
         }
 
         @media (prefers-color-scheme: light) {
@@ -20,8 +22,10 @@
                 --text-main: #0f172a;
                 --text-muted: #64748b;
                 --accent: #dc2626;
+                --success: #16a34a;
                 --card-bg: rgba(255, 255, 255, 0.7);
                 --border: rgba(0, 0, 0, 0.06);
+                --input-bg: rgba(255, 255, 255, 0.9);
             }
         }
 
@@ -77,21 +81,45 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        input[type="password"] {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            background-color: var(--input-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        input[type="password"]:focus {
+            border-color: var(--text-muted);
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 1.25rem;
             font-size: 0.9rem;
             font-weight: 500;
             color: var(--bg);
             background-color: var(--text-main);
+            border: none;
             border-radius: 10px;
-            text-decoration: none;
+            cursor: pointer;
             transition: opacity 0.2s ease, transform 0.1s ease;
+            white-space: nowrap;
         }
 
         .btn:hover {
@@ -101,6 +129,13 @@
         .btn:active {
             transform: scale(0.98);
         }
+
+        .error-msg {
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-top: 0.75rem;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -108,8 +143,41 @@
     <main class="container">
         <span class="code">Ошибка 403</span>
         <h1>Доступ ограничен</h1>
-        <p>В настоящий момент ресурс недоступен в вашей сети или IP-адресе.</p>
+        <p>Ресурс защищен. Если у вас есть ключ доступа, введите его ниже:</p>
+        
+        <div class="form-group">
+            <input type="password" id="accessKey" placeholder="Введите ключ..." autocomplete="off">
+            <button class="btn" id="submitBtn">Войти</button>
+        </div>
+        <div class="error-msg" id="errorMsg">Неверный ключ, попробуйте еще раз.</div>
     </main>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            const val = document.getElementById('accessKey').value.trim();
+            const errorMsg = document.getElementById('errorMsg');
+
+            // Сверяем введенный ключ с вашим секретом (secret123)
+            if (val === 'secret123') {
+                // Сохраняем куку на 1 год, доступную для всего сайта (path=/)
+                document.cookie = "access_granted=secret123; path=/; max-age=31536000; SameSite=Lax";
+                errorMsg.style.display = 'none';
+                // Перенаправляем пользователя на главную страницу (или перезагружаем текущую)
+                window.location.href = '/';
+            } else {
+                // Показываем ошибку, если ввели не то
+                errorMsg.style.display = 'block';
+                document.getElementById('accessKey').value = '';
+            }
+        });
+
+        // Поддержка нажатия Enter в поле ввода
+        document.getElementById('accessKey').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('submitBtn').click();
+            }
+        });
+    </script>
 
 </body>
 </html>
